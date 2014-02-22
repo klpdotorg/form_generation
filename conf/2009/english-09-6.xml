@@ -1,0 +1,108 @@
+<assessment name="english">
+  <preamble>
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 5}
+\SetWatermarkScale{5}
+
+\def\heading{2009-10 English post-test assessment}
+%% Headers and footers
+\lhead{\textbf{Block:} [% school.b1 %] \textbf{Cluster:} [% school.b %]}
+\chead{}
+\rhead{\textbf{Name:} [% school.name %] ([% num_stu %] children) \textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara-ILID -- English Post-test Assessment -- January 2010}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <common format="|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|">
+    <item tvar="[% stu.sid %]">CID</item>
+    <item tvar="[% stu.name %]">Name</item>
+    <item tvar="[% stu.father %]">Father</item>
+    <item tvar="[% stu.mother %]">Mother</item>
+    <item tvar="[% stu.sex %]">Sex</item>
+  </common>
+  <instructions>
+    <type name="yn">Yes=1; No=0</type>
+    <type name="blank">\relax</type>
+    <type name="cw">\makecell[t]{Correct=1\\Wrong=2}</type>
+  </instructions>
+  <titles>
+    <title name="domain">Questions</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Questions">
+    <question>
+      <text>1</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>2</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>3</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>4</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>5</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>6</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>7</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>8</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>9</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>10</text>
+      <instruction>cw</instruction>
+    </question>
+  </domain>
+  <domain name="General">
+    <question>
+      <text>\makecell[t]{Has child \\ come from \\ English \\ medium \\ school?}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\makecell[t]{Is child \\ taking \\ English \\ tuitions?}</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+</assessment>

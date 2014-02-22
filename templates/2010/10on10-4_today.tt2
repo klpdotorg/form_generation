@@ -1,0 +1,68 @@
+
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=0cm,right=0cm,bottom=2cm]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 4}
+\SetWatermarkScale{5}
+
+\def\heading{2010-11 10/10 assessment}
+%% Headers and footers
+\lhead{\includegraphics[scale=0.2]{/home/alok/src/klp-common/images/logo-pic-only.jpg}\makecell[l]{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %]}}
+\chead{\textbf{School:} \parbox{5cm}{[% school.name %]} }
+\rhead{\textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- 10/10 Pretest-- \today}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  \rowcolors{2}{}{yellow}
+\begin{longtable}{|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|l|l|l|l|l|l|}
+\hline
+ & & & & & & \multicolumn{5}{|c|}{Competencies} \\ \hline
+ & & & & & & \question{C1} & \question{C2} & \question{C3} & \question{C4} & \question{C5} \\ \hline
+ & & & & & & $/20$ & \multicolumn{2}{|c|}{$/15$} & \multicolumn{2}{|c|}{$/10$} \\ \hline
+\commonh{StuID} & \commonh{Name} & \commonh{Father} & \commonh{Mother} & \commonh{Sex} &  & 1 & 2 & 3 & 4 & 5\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & [% stu.sex %] & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+\rowcolors{1}{}{}
+
+%%\pagebreak
+
+
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} & HM's signature \\
+    & Date
+    \end{tabular}
+  
+
+\end{document}
+
+[% END -%]

@@ -1,0 +1,130 @@
+[% USE Latex %]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a3paper,top=2.5cm,left=1cm,right=1cm,bottom=1.5cm,landscape]{geometry}
+\usepackage{rotating,makecell}
+\usepackage{fontenc}
+\usepackage{longtable}
+\usepackage{draftwatermark}
+%% \usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{lastpage}
+\usepackage{fp}
+\usepackage{fancyhdr}
+\usepackage[table,gray]{xcolor}
+\pagestyle{fancy}
+
+\def\heading{2010-11 Anganwadi assessment}
+%% Headers and footers
+\lhead{\includegraphics[scale=0.40]{/home/shivangi/src/assessments/images/logo-full.jpg}}
+\chead{ID: [% school.scode %] Name: [% school.name %] ([% num_stu %] children) Type: [% school.stype %]}
+\rhead{Project: [% school.b1 %] Circle: [% school.b %]\\ Worker: [% school.tname %]}
+\lfoot{\small{[Name]}}
+\cfoot{\small{Akshara-Dell -- Anganwadi Assessment -- August 2010 © Akshara Foundation, 2010}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+%\nomakegapedcells
+%\renewcommand\theadset{\renewcommand\arraytretch{1}%
+%    \setlength\extrarowheight{0cm}}
+%\renewcommand\theadgape{0cm}
+%\renewcommand\cellgape{}
+%\setcellgapes[b]{-0.5cm}
+
+\setlength{\headheight}{20pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\qsetnum}{%
+\FPsub{\qnum}{\thepage}{1}
+\FPdiv{\qnum}{\thepage}{4}%
+\FPtrunc{\tqnum}{\qnum}{0}%
+\FPsub{\qnum}{\qnum}{\tqnum}%
+\FPmul{\qnum}{\qnum}{4}%
+\FPtrunc{\qnum}{\qnum}{0}%
+\FPifeq{\qnum}{0}
+   \FPset{\qnum}{4}%
+\fi
+\FPprint{\qnum}
+}%
+
+\newcommand{\kn}[1]{%Kannada text
+{\fontspec[Script=Kannada]{Kedage}%
+#1
+}}
+
+%\newcommand{\grading}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+%\newcommand{\instruct}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+\newcommand{\question}[1]{\begin{sideways}#1\end{sideways}}
+
+\title{\heading}
+\begin{document}
+
+%\fontspec[Script=Kannada]{Kedage}
+\SetWatermarkText{1}
+
+\rowcolors{13}{}{yellow}
+\begin{longtable}{|l|p{4cm}|p{4cm}|p{4cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+& & & & & \multicolumn{5}{|c|}{\kn{ಸಾಮಾನ್ಯ ಅರಿವು}} & \multicolumn{4}{|c|}{\kn{ಸ್ಥೂಲ ಚಲನೆಯ ಕೌಶಲಗಳು}} & \multicolumn{4}{|c|}{\kn{ಸ್ವ ಸಹಾಯ ಕೌಶಲಗಳು}} & \multicolumn{2}{|c|}{\kn{ಕೈ ಚಳಕ ಬಳಕೆ ಕೌಶಲಗಳು}} \\ \hline
+& & & & & \question{\kn{ಮಗು ತನ್ನ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?}} & \question{\kn{ತನ್ನ ವಯಸ್ಸು ಹೇಳುತ್ತದೆಯೇ?}} & \question{\kn{ತಾಯಿಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?}} & \question{\kn{ತಂದೆಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?}} & \question{\kn{ಶಾಲೆಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?}} & \question{\kn{ಚೆಂಡನ್ನು ಹಿಡಿಯುವುದು}} & \question{\kn{ಚೆಂಡನ್ನು ಎಸೆಯುವುದು}} & \question{\kn{ಜಿಗಿಯುವುದು}} & \question{\kn{ನೇರವಾದ ಗೆರೆಯ ಮೇಲೆ ನೆಡೆಯುವುದು}} & \question{\kn{ದಾರವನ್ನು ರಂಧ್ರಗಳಲ್ಲಿ ಪೋಣಿಸುವುದು}} & \question{\kn{ಅಂಗಿಯ ಗುಂಡಿಗಳನ್ನು ಹಾಕುವುದು}} & \question{\kn{ಅಂಗಿಯ ಗುಂಡಿಗಳನ್ನು ಬಿಚ್ಚುವುದು}} & \question{\kn{ನೀರನ್ನು ಸುರಿಯುವುದು}} & \question{\kn{\makecell[b]{ತೋರು ಬೆರಳಿನಿಂದ ಬಣ್ಣ ಹಾಕುವುದು \\ (ಚಟುವಟಿಕೆ ಹಾಳೆ 14 ಉಪಯೊಗಿಸಿ)}}} & \question{\kn{ಗೋಪುರ ನಿರ್ಮಾಣ (ಐದು ಘನಾಕ್ರತಿ)}}\rule{0cm}{9cm} \\ \hline
+& & & & & \multicolumn{15}{|c|}{\kn{ಹೌದು=1; ಇಲ್ಲ=0}}\rule{0cm}{3cm} \\ \hline
+CID & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} &  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & & & & & & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+\pagebreak
+
+\SetWatermarkText{2}
+
+\rowcolors{9}{}{yellow}
+\begin{longtable}{|l|p{4cm}|p{4cm}|p{4cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & \multicolumn{13}{|c|}{\kn{ಭಾಷಾ ಬೆಳವಣಿಗೆ}} & \multicolumn{5}{|c|}{\kn{ಬೌದ್ಧಿಕ ಬೆಳವಣಿಗೆ}} \\ \hline
+ & & & & & \question{\kn{ಮೂರು ಪದಗಳ ವಾಕ್ಯ ರಚನೆ}} & \question{\kn{ಮೂರು ಸೂಚನೆಗಳನ್ನು ಅನುಸರಿಸುವುದು}} & \question{\kn{ಶಿಶು ಗೀತೆ ಹೇಳುವುದು}} & \question{\kn{ಪ್ರಾಥಮಿಕ ಬಣ್ಣಗಳನ್ನು ಗುರುತಿಸುವುದು}} & \question{\kn{ಹಣ್ಣು ಮತ್ತು ತರಕಾರಿಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು}} & \question{\kn{ಮೊದಲ ಶಬ್ದದ ಉಚ್ಛಾರಣೆ}} & \question{\kn{ಕ್ರಿಯಾಪದಗಳನ್ನು ಗುರುತಿಸುವುದು}} & \question{\kn{ದೇಹದ ಅಂಗಗಳನ್ನು ಗುರುತಿಸುವುದು}} & \question{\kn{ಮಗು ಮೇಲೆ/ಕೆಳಗೆ ತೋರಿಸುವುದು}} & \question{\kn{ಮಗು ಒಳಗೆ/ಹೊರಗೆ ತೋರಿಸುವುದು}} & \question{\kn{ಮಗು ಮುಂದೆ/ಹಿಂದೆ ತೋರಿಸುವುದು}} & \question{\kn{ಎಡ/ಬಲ ತೋರಿಸುವುದು}} & \question{\kn{ಮಗು ಕಥೆ ಹೇಳುವುದು}} & \question{\kn{ಮಗು ಬಣ್ಣಗಳ ಚೂರುಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು}} & \question{\kn{ಮಗು ಆಕಾರಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು}} & \question{\kn{ಮಗು ಆಕಾರಗಳ ಹೆಸರುಗಳನ್ನು ಹೇಳುವುದು}} & \question{\kn{ಮಗು ಗಾತ್ರಾನುಸಾರ ಚೂರುಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು}} & \question{\kn{ಮಗು ವೃತ್ತಗಳನ್ನು ಕ್ರಮಬದ್ಧವಾಗಿ ಜೋಡಿಸುವುದು}}\rule{0cm}{9cm} \\ \hline
+ & & & & & \kn{\makecell[b]{3=1 \\ 3ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \multicolumn{4}{|c|}{\kn{ಹೌದು=1; ಇಲ್ಲ=0}} & \kn{\makecell[b]{5=1 \\ 5ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \kn{\makecell[b]{3=1 \\ 3ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \kn{\makecell[b]{5=1 \\ 5ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \multicolumn{8}{|c|}{\kn{ಹೌದು=1; ಇಲ್ಲ=0}} & \kn{\makecell[b]{4=1 \\ 4ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \kn{\makecell[b]{ಹೌದು=1 \\ ಇಲ್ಲ=0}}\rule{0cm}{3cm} \\ \hline
+CID & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} &  & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 & 32 & 33\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & & & & & & & & & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+\pagebreak
+
+\SetWatermarkText{3}
+
+\rowcolors{47}{yellow}{}
+\begin{longtable}{|l|p{4cm}|p{4cm}|p{4cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & \multicolumn{3}{|c|}{\kn{ಶಿಕ್ಷಣ ಪೂರ್ವ ಓದುವುದು}} & \multicolumn{9}{|c|}{\kn{ಶಿಕ್ಷಣ ಪೂರ್ವ ಬರೆಯುವುದು}} \\ \hline
+ & & & & & \question{\kn{ಮಗು ಆಟಿಕೆಗಳನ್ನು ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು}} & \question{\kn{ಮಗು ತನ್ನ ಸರದಿಗಾಗಿ ಕಾಯುವುದು}} & \question{\kn{ಮಗು ಭಾವನೆಗಳನ್ನು ವ್ಯಕ್ತಪಡಿಸುವುದು}} & \question{\kn{ಮಗು ಸ್ನೇಹಿತರನ್ನು ಮಾಡಿಕೊಳ್ಳುವುದು}} & \question{\kn{\makecell[b]{ಮಗು ಗುಂಪಿಗೆ ಸೇರದ ಆಕಾರವನ್ನು ಗುರುತಿಸುವುದು.\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 38 ಉಪಯೊಗಿಸಿ)}}} & \question{\kn{ಮಗು} A \kn{ಯಿಂದ} Z \kn{ವರೆಗೆ ಗುರುತಿಸುವುದು}} & \question{\kn{ಮಗು ಅ ಯಿಂದ ಅ: ವರೆಗೂ ಗುರುತಿಸುವುದು}} & \question{\kn{\makecell[b]{ಮಗು ಆಕಾರಗಳ ಮೇಲೆ ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 41 ಉಪಯೊಗಿಸಿ)}}} & \question{\kn{\makecell[b]{ಮಗು ಆಕಾರಗಳನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 42 ಉಪಯೊಗಿಸಿ)}}} & \question{\kn{\makecell[b]{ಮಗು ಅಕ್ಷರಗಳನ್ನು ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 43 ಉಪಯೊಗಿಸಿ)}}} & \question{\kn{\makecell[b]{ಮಗು ಅಕ್ಷರಗಳನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 44 ಉಪಯೊಗಿಸಿ)}}} & \question{\kn{\makecell[b]{ಮಗು ಸಂಖ್ಯೆಗಳನ್ನು ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 45 ಉಪಯೊಗಿಸಿ)}}}\rule{0cm}{9cm} \\ \hline
+ & & & & & \multicolumn{4}{|c|}{\kn{ಹೌದು=1; ಇಲ್ಲ=0}} & \kn{\makecell[b]{2ರಿಂದ5=1 \\ 2ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \kn{\makecell[b]{5=1 \\ 5ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \kn{\makecell[b]{4=1 \\ 4ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \multicolumn{5}{|c|}{\kn{ಹೌದು=1; ಇಲ್ಲ=0}}\rule{0cm}{3cm} \\ \hline
+CID & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} &  & 34 & 35 & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & 45\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & & & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+\pagebreak
+
+\SetWatermarkText{4}
+
+\rowcolors{13}{}{yellow}
+\begin{longtable}{|l|p{4cm}|p{4cm}|p{4cm}|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & \multicolumn{7}{|c|}{\kn{ಶಿಕ್ಷಣ ಪೂರ್ವ ಗಣಿತ}} & \multicolumn{4}{|c|}{\kn{ಸಾಮಾಜಿಕ ಮತ್ತು ಭಾವನಾತ್ಮಕ ಬೆಳವಣಿಗೆ}} \\ \hline
+ & & & & & \question{\kn{\makecell[b]{ಮಗು ಸಂಖ್ಯೆಗಳನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 46 ಉಪಯೊಗಿಸಿ)}}} & \question{\kn{ಮಗು ಪೆನ್ಸಿಲ್ ಚೆನ್ನಾಗಿ ಹಿಡಿಯುವುದು}} & \question{\kn{ಮಗು ಪೆನ್ಸಿಲ್ ನಿಂದ ಒತ್ತಿ ಬರೆಯುವುದು}} & \question{\kn{ಮಗುವಿನ ಪೆನ್ಸಿಲ್ ನ ನಿಯಂತ್ರಣ ಸರಿಯಾಗಿದೆ}} & \question{\kn{ಹೆಚ್ಚು/ಕಡಿಮೆ ಹೇಳುವುದು}} & \question{\kn{ಮಗು 9 ವಸ್ತುಗಳನ್ನು ಎಣಿಸುವುದು}} & \question{\kn{ಮಗು 1 ರಿಂದ 9 ರವರೆಗೆ ಗುರುತಿಸುವುದು}} & \question{\kn{ಮಗು 1 ರಿಂದ 20 ರವರೆಗಿನ ಸಂಖ್ಯೆಗಳನ್ನು ಎಣಿಸುವುದು}} & \question{\kn{ಮಗು ವಾರದ ದಿನಗಳನ್ನು ಹೇಳುವುದು}} & \question{\kn{ಮಗು ತಿಂಗಳುಗಳನ್ನು ಹೇಳುವುದು}} & \question{\kn{ಮಗುವಿಗೆ ಪ್ರಸ್ತುತ ವರ್ಷ ಯಾವುದು ಎಂದು ಕೇಳುವುದು}}\rule{0cm}{9cm} \\ \hline
+ & & & & & \multicolumn{7}{|c|}{\kn{ಹೌದು=1; ಇಲ್ಲ=0}} & \kn{\makecell[b]{20=1 \\ 20ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}} & \multicolumn{3}{|c|}{\kn{ಹೌದು=1; ಇಲ್ಲ=0}}\rule{0cm}{3cm} \\ \hline
+CID & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} &  & 46 & 47 & 48 & 49 & 50 & 51 & 52 & 53 & 54 & 55 & 56\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+\pagebreak
+
+
+
+\end{document}

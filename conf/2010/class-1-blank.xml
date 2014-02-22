@@ -1,0 +1,142 @@
+<assessment name="class1">
+  <preamble>
+\documentclass[10pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=0.1cm,right=0.2cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{graphicx}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\usepackage[table,gray]{xcolor}
+\pagestyle{fancy}
+
+\def\heading{Grading Sheet - Class 1 Carry Through Assessment}
+%% Headers and footers
+\lhead{\includegraphics[scale=0.50]{/home/shivangi/src/assessments/images/logo-full.jpg}}
+\chead{Akshara Foundation, Class1 Assessment.\\ December 2010}
+\rhead{\textbf{Block:} \rule{3cm}{0.3pt} \textbf{Cluster:} \rule{3cm}{0.3pt}\\ \textbf{SchoolKLPId:} \rule{3cm}{0.3pt} \textbf{School:} \rule{3cm}{0.3pt}\\ \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: }
+\cfoot{\small{Akshara Foundation. Research and Evaluation. December 2010}}
+\rfoot{page \rule{1cm}{0.3pt} of \rule{1cm}{0.3pt}}
+
+\setlength{\headheight}{2.0cm}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+	<query>
+	</query>
+  <common format="|l|p{2.0cm}|p{2.0cm}|p{2.0cm}|l|p{0.8cm}|l|">
+    <item tvar="\rule{0cm}{0.75cm}">\makecell{Sl.\\no.}</item>
+    <item tvar="\relax">Name</item>
+    <item tvar="\relax">Father</item>
+    <item tvar="\relax">Mother</item>
+    <item tvar="\relax">Sex</item>
+		<item tvar="\relax">DoB</item>
+		<item tvar="\relax">\makecell{Mother\\tongue}</item>
+  </common>
+  <instructions>
+    <type name="yn">Yes=1; No=0</type>
+    <type name="cn">\makecell{Correct=1;\\ No=0}</type>
+    <type name="fn">\makecell{Fluent=1;\\ No=0}</type>
+    <type name="blank">\relax</type>
+  </instructions>
+  <titles>
+    <title name="domain">Oral Test</title>
+    <title name="domain">Written Test</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+  </titles>
+  <domain name="Oral Test">
+    <question>
+      <text>1</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>2</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>3</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>4</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>5</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>6</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>7</text>
+      <instruction>fn</instruction>
+    </question>
+    <question>
+      <text>8</text>
+      <instruction>cn</instruction>
+    </question>
+  </domain>
+  <domain name="Written Test">
+    <question>
+      <text>9</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>10</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>11</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>12</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>13</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>14</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>15</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>16</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>17</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>18</text>
+      <instruction>cn</instruction>
+    </question>
+  </domain>
+  <domain name="General">
+    <question>
+      <text>A</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>B</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+</assessment>

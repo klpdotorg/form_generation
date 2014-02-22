@@ -1,0 +1,44 @@
+[% USE Latex(filter='pdf') %]
+[% FILTER pdf %]
+
+\documentclass[10pt]{article}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,portrait]{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.15]{/home/shivangi/src/assessments/logo.jpg}}
+\chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %] \\ \textbf{School:} [% school.name %] ([% num_stu %] children) }
+\rhead{\LARGE{\textbf{2.5-4.5 years age group}}  \\ \small{\textbf{ID:} [% school.scode %]}}
+\lfoot{\small{Form ID: }}
+\cfoot{\small{Akshara -- Student List-- June2012}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\begin{document}
+\begin{longtable}{|l|p{3.0cm}|r@{}l|l|l|l|p{3.0cm}|p{3.0cm}|}
+\hline
+\textbf{StuID} & \textbf{Student Name} & \textbf{Sex} & \textbf{DoB} & \textbf{\makecell[b]{Mother\\ Tongue}} & \textbf{Father Name} & \textbf{Mother Name} \\
+\endhead \hline
+
+[% FOREACH stu = students -%]
+[% stu.sid %] & \footnotesize{[% stu.name %]} & [% stu.sex %] & [% stu.dob %] & [% stu.lang%] & \footnotesize{[% stu.father %]} & \footnotesize{[% stu.mother %]} \\ \hline
+[% END %]
+
+\end{longtable}
+\end{document}
+[% END %]

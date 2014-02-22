@@ -1,0 +1,150 @@
+<assessment name="nng3-2010-4">
+  <preamble>
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 4}
+\SetWatermarkScale{5}
+
+\def\heading{2010-11 NNG-3 assessment}
+%% Headers and footers
+\lhead{\makecell[l]{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %]}}
+\chead{\textbf{School:} \parbox{5cm}{[% school.name %]} }
+\rhead{\textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- NNG -- July 2010}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+select  stu.studentid as sid,
+	c.childfname || ' ' || c.childmname || ' ' || c.childlname as cname,
+	r.fname || ' ' || r.mname || ' ' || r.lname as pname,
+	decode(r.relationtypeid,
+        1, 'father',
+        2, 'mother') as ptype,
+	c.gender as csex,
+	replace(concat(sg.studgroupname, sec.section), 'NoSection') as class,
+	s.id as scode,
+	trim(s.schoolname) as sname,
+	i.medium_name as moi,
+	trim(b2.name) as b2, 
+	trim(b1.name) as b1, 
+	trim(b.name) as b
+from eg_school s, 
+	eg_instr_medium i,
+	egems_studentgroup sg, 
+        egems_studgroup_mstr sgm,
+	egems_schstu_association scg, 
+	eg_section sec, 
+	egems_student stu, 
+	egclts_child c, 
+	egclts_childrelation cr, 
+	egclts_relation r, 
+	eg_boundary b, 
+	eg_boundary b1, 
+	eg_boundary b2, 
+	eg_boundary_type bt
+where 
+	s.id_adm_boundary = b.ID_BNDRY
+	and b.PARENT = b1.ID_BNDRY
+	and b1.PARENT = b2.ID_BNDRY
+	and b.id_bndry_type = bt.id_bndry_type
+	and bt.id_heirarchy_type = 1
+	and s.id_instr_medium = i.id_instr_medium (+)
+	and sg.schoolid = s.id
+	and sg.STUDENTGROUPID = scg.STUDENTGROUPID
+        and sg.groupid = sgm.groupid
+        and sgm.groupname = 'Class'
+	and sg.sectionid = sec.sectionid
+	and scg.STUDENTID = stu.studentid
+	and stu.is_active = 1
+	and stu.statusid = 1
+	and scg.academicyearid = 119
+	and stu.childid = c.childid
+	and c.childid = cr.childid
+	and cr.childrelationid = r.relationid 
+	and r.relationtypeid in (1, 2)
+	and s.id = 33315 -- testing
+  </query>
+  <common format="|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|">
+    <item tvar="[% stu.sid %]">\commonh{CID}</item>
+    <item tvar="[% stu.name %]">\commonh{Name}</item>
+    <item tvar="[% stu.father %]">\commonh{Father}</item>
+    <item tvar="[% stu.mother %]">\commonh{Mother}</item>
+    <item tvar="[% stu.sex %]">\commonh{Sex}</item>
+  </common>
+  <instructions>
+    <type name="fifteen">$/15$</type>
+    <type name="twenty">$/20$</type>
+    <type name="twentyfive">$/25$</type>
+    <type name="ten">$/10$</type>
+    <type name="yn">Yes/No</type>
+    <type name="att">\makecell[l]{Low($&lt;30$\%)\\Medium($30$-$70$\%)\\Good($&gt;70$\%)}</type>
+  </instructions>
+  <titles>
+    <title name="domain">Competencies</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Competencies">
+    <question>
+      <text>C1</text>
+      <instruction>twenty</instruction>
+    </question>
+    <question>
+      <text>C2</text>
+      <instruction>twentyfive</instruction>
+    </question>
+    <question>
+      <text>C3</text>
+      <instruction>fifteen</instruction>
+    </question>
+    <question>
+      <text>C4</text>
+      <instruction>ten</instruction>
+    </question>
+  </domain>
+  <domain name="Others">
+    <question>
+      <text>\makecell{Parihara\\ bodhane?}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Attendance</text>
+      <instruction>att</instruction>
+    </question>
+  </domain>
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

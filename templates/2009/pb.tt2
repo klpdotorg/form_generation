@@ -1,0 +1,46 @@
+
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%% Headers and footers
+\lhead{\textbf{Block:} [% school.b1 %] \textbf{Cluster:} [% school.b %]}
+\chead{}
+\rhead{\textbf{Name:} [% school.name %] \textbf{ID:} [% school.scode %]}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- Parihara Bodhane -- November 2009}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+
+\begin{document}
+  \begin{longtable}{|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|l|l|l|}
+\hline
+ & & & & & & & \multicolumn{1}{|c|}{Blank} \\ \hline
+CID & Name & Father & Mother & Sex & Class &  & \question{\makecell[t]{Parihara\\Bodhane ?}} \\ \hline
+ & & & & & & & \relax \\ \hline
+\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & [% stu.sex %] & [% stu.class %] & & \\ \hline
+[% END %]
+\end{longtable}
+
+%%\pagebreak
+
+
+
+\end{document}
+
+[% END -%]

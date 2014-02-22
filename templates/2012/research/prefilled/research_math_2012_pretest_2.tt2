@@ -1,0 +1,94 @@
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a3paper,landscape,top=2cm,left=0.5cm,right=0.5cm,bottom=3cm]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{3cm}
+\SetWatermarkText{Std. 2}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.2]{/home/shivangi/src/assessments/form_generation/logo.jpg}}
+\chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %] \\ \textbf{School:} [% school.name %] ([% num_stu %] children) \textbf{ID:} [% school.scode %]}
+
+\rhead{\textbf{RCT --Akshara Math-- February 2012-2013} \\ \LARGE{\textbf{Class: 2}}\\ \small{\textbf{Field Investigator:}} \rule{5cm}{0.3pt}}
+\cfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2cm}
+\setlength{\footskip}{1cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+\renewcommand{\arraystretch}{1.5}
+
+
+\title{\heading}
+\begin{document}
+
+  \rowcolors{2}{}{yellow}
+\begin{longtable}{|l|p{2.5cm}|p{2.5cm}|p{2.5cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & & & \question{Q1a} & \question{Q1b} & \question{Q1c} & \question{Q2a} & \question{Q2b} & \question{Q2c} & \question{Q3a} & \question{Q3b} & \question{Q3c} & \question{Q4a} & \question{Q4b} & \question{Q4c} & \question{Q5a} & \question{Q5b} & \question{Q5c} & \question{Q6a} & \question{Q6b} & \question{Q6c}\\ \hline
+ & & & & & & & \multicolumn{18}{|c|}{Correct=1, Wrong=0, Not Attempted=NA} \\ \hline
+CID & Student's Name & Father's Name & Mother's Name & Sex & MT & DoB  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 & 16 & 17 & 18\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & [% stu.sex %] & [% stu.mt %] & [% stu.dob %] & & & & & & & & & & & & & & & & & &  \\ \hline
+[% END %]
+ & & & & & & & & & & & & & & & & & & & & & & & &  \\ \hline
+ & & & & & & & & & & & & & & & & & & & & & & & &  \\ \hline
+ & & & & & & & & & & & & & & & & & & & & & & & &  \\ \hline
+ & & & & & & & & & & & & & & & & & & & & & & & &  \\ \hline
+ & & & & & & & & & & & & & & & & & & & & & & & &  \\ \hline
+\end{longtable}
+\rowcolors{1}{}{}
+
+\pagebreak
+
+
+  \rowcolors{2}{}{yellow}
+\begin{longtable}{|l|p{2.5cm}|p{2.5cm}|p{2.5cm}||l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+& & & & \question{Q7a} & \question{Q7b} & \question{Q7c} & \question{Q8a} & \question{Q8b} & \question{Q8c} & \question{Q9a} & \question{Q9b} & \question{Q9c} & \question{Q10a} & \question{Q10b} & \question{Q10c} & \question{Q11a} & \question{Q11b} & \question{Q11c} & \question{Q12a} & \question{Q12b} & \question{Q12c} & \question{Q13a} & \question{Q13b} & \question{Q13c} \\ \hline
+ & & & & \multicolumn{21}{|c|}{Correct=1, Wrong=0, Not Attempted=NA} \\ \hline
+CID & Student's Name & Father's Name & Mother's Name &19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & & & & & & & & & & & & & & & & & & & & &\\ \hline
+[% END %]
+ & & & & & & & & & & & & & & & & & & & & & & & &\\ \hline
+ & & & & & & & & & & & & & & & & & & & & & & & &\\ \hline
+ & & & & & & & & & & & & & & & & & & & & & & & &\\ \hline
+ & & & & & & & & & & & & & & & & & & & & & & & &\\ \hline
+ & & & & & & & & & & & & & & & & & & & & & & & &\\ \hline
+\end{longtable}
+\rowcolors{1}{}{}
+
+%%\pagebreak
+
+
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} & HM's signature \\
+    & Date
+    \end{tabular}
+  
+
+\end{document}
+[% END -%]

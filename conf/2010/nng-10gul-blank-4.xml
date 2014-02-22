@@ -1,0 +1,97 @@
+<assessment name="nng-2010-4-blank">
+  <preamble>
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 4}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{images/logo-full.jpg}}
+\chead{\textbf{Block:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt}}
+\rhead{\textbf{School:} \rule{6cm}{0.3pt}\\ \textbf{Teacher:} \rule{5cm}{0.3pt}}
+\lfoot{Form ID: }
+\cfoot{\small{Akshara -- NNG PostTest -- Feb2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+  </query>
+  <common format="|l|p{4cm}|p{4cm}|p{4cm}|l|p{3cm}|l|l|">
+    <item tvar="\rule{0cm}{0.75cm}">Sl.no.</item>
+    <item tvar="\relax">Name</item>
+    <item tvar="\relax">Father</item>
+    <item tvar="\relax">Mother</item>
+    <item tvar="\relax">Sex</item>
+    <item tvar="\relax">DoB</item>
+    <item tvar="\relax">\makecell{Mother\\tongue}</item>
+    <item tvar="\relax">Section</item>
+  </common>
+  <instructions>
+    <type name="fifteen">$/15$</type>
+    <type name="twenty">$/20$</type>
+    <type name="five">$/5$</type>
+    <type name="ten">$/10$</type>
+  </instructions>
+  <titles>
+    <title name="domain">Competencies</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Competencies">
+    <question>
+      <text>C1</text>
+      <instruction>twenty</instruction>
+    </question>
+    <question>
+      <text>C2</text>
+      <instruction>twenty</instruction>
+    </question>
+    <question>
+      <text>C3</text>
+      <instruction>ten</instruction>
+    </question>
+    <question>
+      <text>C4</text>
+      <instruction>ten</instruction>
+    </question>
+    <question>
+      <text>C5</text>
+      <instruction>five</instruction>
+    </question>
+  </domain>
+  <domain name="">
+  </domain>
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

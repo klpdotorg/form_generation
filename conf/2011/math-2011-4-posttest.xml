@@ -1,0 +1,148 @@
+<assessment name="nng-2011-4">
+  <preamble>
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{3cm}
+\SetWatermarkText{Std. 4}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{/home/shivangi/src/assessments/images/logo-full.jpg}}
+\chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %] \\ \textbf{School:} [% school.name %] ([% num_stu %] children) \textbf{ID:} [% school.scode %]}
+\rhead{\textbf{Akshara Ganita -- PostTest-- 2011-2012} \\ \textbf{Class: 4}\\ \textbf{Teacher:} \rule{5cm}{0.3pt}}
+\lfoot{\small{Form ID: }}
+\cfoot{\small{Akshara -- NNG PreTest-- July2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+   select  distinct stu.id as sid,
+        ARRAY_TO_STRING(ARRAY[c."firstName",c."middleName",c."lastName"],' ') as cname,
+        ARRAY_TO_STRING(ARRAY[r.first_name,r.middle_name,r.last_name],' ') as pname,
+        lower(r.relation_type) as ptype,
+        ARRAY_TO_STRING(ARRAY[t."firstName",t."middleName",t."lastName"],' ') as tname,
+        to_char(c.dob, 'DD-MON-YYYY') as cdob,
+        c.gender as csex,
+        sg.name as class,
+        sg.section as sec,
+        s.id as scode,
+        trim(s.name) as sname,
+        trim(b2.name) as b2,
+        trim(b1.name) as b1,
+        trim(b.name) as b
+from schools_studentgroup sg,
+     schools_student_studentgrouprelation stusg,
+     schools_student stu,
+     schools_child c  left outer join schools_relations r on (c.id=r.child_id),
+     schools_institution s left outer join schools_staff t on (s.id=t.institution_id and t.staff_type_id=3),
+     schools_boundary b,
+     schools_boundary b1,
+     schools_boundary b2
+where
+        s.boundary_id= b.id
+        and b.parent_id= b1.id
+        and b1.parent_id = b2.id
+        and b.boundary_type_id=1
+        and s.id = sg.institution_id
+        and sg.id = stusg.student_group_id
+        and stusg.student_id = stu.id
+        and stu.active = 2
+        and stusg.academic_id = 102
+        and stu.child_id = c.id
+        and stusg.active=2
+        and s.active=2
+        and b1.id=587
+        and sg.group_type='Class'
+        and sg.name='4'
+  </query>
+  <common format="|l|p{3.0cm}|p{3.0cm}|p{3.0cm}|l|p{1cm}|l|l|">
+    <item tvar="[% stu.sid %]">\commonh{CID}</item>
+    <item tvar="[% stu.name %]">\commonh{Name}</item>
+    <item tvar="[% stu.father %]">\commonh{Father}</item>
+    <item tvar="[% stu.mother %]">\commonh{Mother}</item>
+    <item tvar="[% stu.sex %]">\commonh{Sex}</item>
+  </common>
+  <instructions>
+    <type name="five">$/5$</type>
+    <type name="ten">$/10$</type>
+  </instructions>
+  <titles>
+    <title name="domain">Competencies</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Competencies">
+    <question>
+      <text>Q1</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>Q2</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>Q3</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>Q4</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>Q5</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>Q6</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>Q7</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>Q8</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>Q9</text>
+      <instruction>ten</instruction>
+    </question>
+  </domain>
+  <domain name="">
+  </domain>
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

@@ -1,0 +1,44 @@
+<query>
+      select  distinct stu.id as sid,
+        ARRAY_TO_STRING(ARRAY[c."firstName",c."middleName",c."lastName"],' ') as cname,
+        ARRAY_TO_STRING(ARRAY[r.first_name,r.middle_name,r.last_name],' ') as pname,
+        lower(r.relation_type) as ptype,
+        ARRAY_TO_STRING(ARRAY[t."firstName",t."middleName",t."lastName"],' ') as tname,
+        to_char(c.dob, 'DD-MON-YYYY') as cdob,
+        c.gender as csex,
+        sg.name as class,
+        sg.section as sec,
+        s.id as scode,
+        trim(s.name) as sname,
+        trim(b2.name) as b2,
+        trim(b1.name) as b1,
+        trim(b.name) as b
+from schools_studentgroup sg,
+     schools_student_studentgrouprelation stusg,
+     schools_student stu,
+     schools_child c  left outer join schools_relations r on (c.id=r.child_id),
+     schools_institution s left outer join schools_staff t on (s.id=t.institution_id and t.staff_type_id=3),
+     schools_boundary b,
+     schools_boundary b1,
+     schools_boundary b2
+where
+        s.boundary_id= b.id
+        and b.parent_id= b1.id
+        and b1.parent_id = b2.id
+        and b.boundary_type_id=1
+        and s.id = sg.institution_id
+        and sg.id = stusg.student_group_id
+        and stusg.student_id = stu.id
+        and stu.active = 2
+        and stusg.academic_id = 102
+        and stu.child_id = c.id
+        and stusg.active=2
+        and s.active=2
+        and sg.group_type='Class'
+        and sg.name='3'
+        and b1.id=587
+        and (s.id in (36025,36026,36027,36028,36029,36030,36031,36032,36033,36034,36035,36036,36037,36038,36039,36040,36041,36042,36043,36044,36045,36046,36047,36048,36049,36050,36051,36052,36053,36054,36055,36056,36057,36058,36059,36060,36061,36062,36063,36064,36065,36066,36067,36068,36069,36070,36071,36072,36073,36074,36075,36076,36077,36078,36079,36080,36081,36082,36083,36084,36085,36086,36087,36088,36089,36090,36091,36092,36093,36094,36095,36096,36097,36098,36099,36100,36101,36102,36103,36104,36105,36106,36107,36108,36109,36110,36111,36112,36113,36114,36115,36116,36117,36118,36119,36120,36121,36122,36123,36124,36125,36126,36127,36128,36129,36130,36131,36132,36133,36134,36135,36136,36137,36138,36139,36140,36141,35875,35876,35877,35878,35879,35880,35881,35882,35883,35884,35885,35886,35887,35888,35889,35890,35891,35892,35893,35894,35895,35896,35897,35898,35899,35900,35901,35902,35903,35904,35905,35906,35907,35908,35909,35910,35911,35912,35913,35914,35915,35916,35917,35918,35919,35920,35921,35922,35923,35924,35925,35926,35927,35928,35929,35930,35931,35932,35933,35934,35935,35936,35937,35938,35939,35940,35941,35942,35943,35944,35945,35946,35947,35948,35949,35950,35951,35952,35953,35954,35955,35956,35957,35958,35959,35960,35961,35962,35963,35964,35965,35966,35967,35968,35969,35970,35971,35972,35973,35974,35975,35976,35977,35978,35979,35980,35981,35982,35983,35984,35985,35986,35987,35988,35989,35990,35991,35992,35993,35994,35995,35996,35997,35998,35999,36000,36001,36002,36003,36004,36005,36006,36007,36008,36009,36010,36011,36012,36013,36014,36015,36016,36017,36018,36019,36020,36021,36022,36023,36024)
+ or s.id in (select distinct sg.institution_id from schools_institution s,schools_boundary b,schools_boundary b1,schools_boundary b2, schools_answer se,schools_student_studentgrouprelation stusg,schools_studentgroup sg,schools_question q where se.student_id=stusg.student_id and stusg.student_group_id=sg.id and sg.group_type='Class' and se.question_id=q.id and q.assessment_id=67 and sg.institution_id=s.id and s.boundary_id=b.id and b.parent_id=b1.id and b1.parent_id=b2.id and b1.id=587))
+  </query>
+
+<query>

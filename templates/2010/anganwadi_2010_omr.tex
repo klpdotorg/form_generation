@@ -1,0 +1,197 @@
+﻿\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a3paper,top=2cm,left=0.7cm,right=0.7cm,bottom=2cm,landscape]{geometry}
+\usepackage{rotating,makecell}
+\usepackage{fontenc}
+\usepackage{draftwatermark}
+%% \usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{fp}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\def\heading{2010-11 Anganwadi assessment}
+%% Headers and footers
+\lhead{\includegraphics[scale=0.40]{/home/shivangi/src/assessments/images/logo-full.jpg}}
+\chead{ID: \rule{2in}{0.5pt} Name: \rule{2in}{0.5pt}  Type: \rule{2in}{0.5pt}}
+\rhead{Project: \rule{2in}{0.5pt} Circle: \rule{2in}{0.5pt}\\ Worker: \rule{2in}{0.5pt}}
+\lfoot{\small{[Name]}}
+\cfoot{\small{Akshara -- Anganwadi Assessment -- \today © Akshara Foundation, 2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+
+%\nomakegapedcells
+%\renewcommand\theadset{\renewcommand\arraytretch{1}%
+%    \setlength\extrarowheight{0cm}}
+%\renewcommand\theadgape{0cm}
+%\renewcommand\cellgape{}
+%\setcellgapes[b]{-0.5cm}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\qsetnum}{%
+\FPsub{\qnum}{\thepage}{1}
+\FPdiv{\qnum}{\thepage}{4}%
+\FPtrunc{\tqnum}{\qnum}{0}%
+\FPsub{\qnum}{\qnum}{\tqnum}%
+\FPmul{\qnum}{\qnum}{4}%
+\FPtrunc{\qnum}{\qnum}{0}%
+\FPifeq{\qnum}{0}
+   \FPset{\qnum}{4}%
+\fi
+\FPprint{\qnum}
+}%
+
+\newcommand{\kn}[1]{%Kannada text
+{\fontspec[Script=Kannada]{Kedage}%
+#1
+}}
+
+%\newcommand{\grading}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+%\newcommand{\instruct}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+\newcommand{\question}[1]{\begin{sideways}#1\end{sideways}}
+
+\title{\heading}
+\begin{document}
+
+%\fontspec[Script=Kannada]{Kedage}
+\SetWatermarkText{1}
+
+\begin{tabular}{|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+& & & & & & & \multicolumn{5}{|c|}{Anganwadi Questions Domain 1} & \multicolumn{4}{|c|}{Anganwadi Questions Domain 2} & \multicolumn{4}{|c|}{Anganwadi Questions Domain 3} & \multicolumn{2}{|c|}{Anganwadi Questions Domain 4} \\ \hline
+& & & & & & & \question{Domain1 Ang Question 1?} & \question{Domain1 Ang Question 2?} & \question{Domain1 Ang Question 3?} & \question{Domain1 Ang Question 4?} & \question{Domain1 Ang Question 5?} & \question{Domain2 Ang Question1?} & \question{Domain2 Ang Question2?} & \question{Domain2 Ang Question3?} & \question{Domain2 Ang Question4?} & \question{Domain3 Ang Question1?} & \question{Domain3 Ang Question2?} & \question{Domain3 Ang Question3?} & \question{Domain3 Ang Question4?} & \question{Domain4 Ang Question1?} & \question{Domain4 Ang Question2?}\rule{0cm}{9cm} \\ \hline
+& & & & & & & \multicolumn{15}{|c|}{Yes=1;No=0}\rule{0cm}{3cm} \\ \hline
+CID & StudentName & FathersName & MothersName & Gender & DOB  &  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15\endhead \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & \\ \hline
+\end{tabular}
+
+\pagebreak
+
+\SetWatermarkText{2}
+
+\begin{tabular}{|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & & & \multicolumn{13}{|c|}{Anganwadi Questions Domain 5} & \multicolumn{5}{|c|}{Anganwadi Questions Domain 6} \\ \hline
+ & & & & &  & &\question{Domain5 Ang Question 1?} & \question{Domain 5 Ang English Question 2?} & \question{Domain 5 Ang English Question 3?} & \question{Domain 5 Ang English Question 4?} & \question{Domain 5 Ang English (long question Question 5?} & \question{Domain 5 Ang English (long question Question 6?} & \question{Domain 5 Ang English Question 7?} & \question{Domain 5 Ang English Question 8?} & \question{Domain 5 Ang English Question 9?} & \question{Domain 5 Ang English Question 10?} & \question{Domain 5 Ang English Question 11?} & \question{Domain 5 Ang English Question 12?} & \question{Domain 5 Ang English Question 13?} & \question{Domain 6 Ang English Question 1?} & \question{Domain 6 Ang English Question 2?} & \question{Domain 6 Ang English Question 3?} & \question{Domain 6 Ang English long Question 4?} & \question{Domain 6 Ang English Question 5?}\rule{0cm}{9cm} \\ \hline
+& & & & & & & \makecell[b]{3=1 \\ 3Yes \\ No=0} & \multicolumn{4}{|c|}{Yes=1;No=0} & \makecell[b]{5=1 \\ 5Yes \\ No=0} & \makecell[b]{3=1 \\ 3Yes \\ No=0} & \makecell[b]{5=1 \\ 5Yes \\ No=0} & \multicolumn{8}{|c|}{Yes=1;No=0} & \makecell[b]{4=1 \\ 4Yes\\ No=0} & \makecell[b]{Yes=1 \\ No=0}\rule{0cm}{3cm} \\ \hline
+CID & Studentsname & FathersName & MothersName & Gender & DOB &  & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 & 32 & 33\endhead \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & & & & & & & \\ \hline
+
+\end{tabular}
+
+\pagebreak
+
+\SetWatermarkText{3}
+
+\begin{tabular}{|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+  & & & & & & & \multicolumn{4}{|c|}{Anganwadi Questions Domain 7} & \multicolumn{3}{|c|}{Anganwadi Questions Domain 8} & \multicolumn{4}{|c|}{Anganwadi Questions Domain 9} \\ \hline
+ & & & & & & &  \question{Domain7 Ang Question long english question 1?} & \question{Domain7 Anganwadi Question 2?} & \question{Domain7 Anganwadi Question 3?} & \question{Domain7 Anganwadi Question 4?} & \question{\makecell[b]{Domain8 Anganwadi Question 1a?\\(Domain8 Anganwadi Question 1a text)}} & \question{Domain8 Anganwadi Question 2?} & \question{Domain8 Anganwadi Question 3?}
+ \rule{0cm}{9cm} & \question{\makecell[b]{Domain9 Anganwadi Question 1?\\(Domain9 Anganwadi Question 1text)}} & \question{\makecell[b]{Domain9 Anganwadi Question 2?\\(Domain9 Anganwadi Question 2text)}} & \question{\makecell[b]{Domain9 Anganwadi Question 3?\\(Domain9 Anganwadi Question 3text)}} & \question{\makecell[b]{Domain9 Anganwadi Question 4?\\(Domain9 Anganwadi Question 4)}}  \\ \hline
+ & & & & & & & \multicolumn{4}{|c|}{Yes=1; No=0} & \makecell[b]{2 Yes 5=1 \\ 2No \\Dontknow=0} & \makecell[b]{5=1 \\ 5 Yes\\ No=0} & \makecell[b]{4=1 \\ 4Yes \\ No=0} \rule{0cm}{3cm} & \multicolumn{4}{|c|}{Yes=1; No=0}\\ \hline
+CID & StudentName & FathersName & MothersName & Gender & DOB &  & 34 & 35 & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44\endhead \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & &  \\ \hline
+
+\end{tabular}
+
+\pagebreak
+
+\SetWatermarkText{4}
+
+\begin{tabular}{|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+& & & & & & &\multicolumn{5}{|c|}{Anganwadi Questions Domain 9} & \multicolumn{7}{|c|}{Anganwadi Questions Domain 10} \\ \hline
+ & & & & & & & \question{\makecell[b]{Domain9 Anganwadi Question 5?\\(Domain9 Anganwadi Question 5)}} & \question{\makecell[b]{Domain9 Anganwadi Question 6?\\(Domain9 Anganwadi Question 6)}} & \question{Domain9 Anganwadi Question 7?} & \question{Domain9 Anganwadi Question 8?} & \question{Domain9 Anganwadi Question 9?} & \question{Domain10 Anganwadi Question 1?} & \question{Domain10 Anganwadi Question 2?} & \question{Domain10 Anganwadi Question 3? (Use TLM 52) } & \question{Domain10 Anganwadi Question 4?} & \question{Domain10 Anganwadi Question 5?} & \question{Domain10 Anganwadi Question 6?} & \question{Domain10 Anganwadi Question 7?}\rule{0cm}{9cm} \\ \hline
+ & & & & & & &\multicolumn{8}{|c|}{Yes=1;No=0} & \makecell[b]{20=1 \\ 20Yes \\ No=0} & \multicolumn{3}{|c|}{Yes=1;No=0}\rule{0cm}{3cm} \\ \hline
+CID & StudentName & FathersName & MothersName & Gender & DOB &  & 45 & 46 & 47 & 48 & 49 & 50 & 51 & 52 & 53 & 54 & 55 & 56\endhead \hline
+
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+ & &  &  &  &  &  & & & & & & & & & & & & \\ \hline
+
+\end{tabular}
+
+\pagebreak
+
+
+
+\end{document}

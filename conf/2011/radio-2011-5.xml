@@ -1,0 +1,309 @@
+<assessment name="IAI-2011-5">
+  <preamble>
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a3paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{images/logo-full.jpg}}
+\chead{\textbf{Block:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt}}
+\rhead{\textbf{School:} \rule{6cm}{0.3pt}\\ \textbf{Evaluator:} \rule{5cm}{0.3pt}}
+\lfoot{Form ID: }
+\cfoot{\small{Akshara -- IAI -- 2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+select  
+stu.studentid as sid, 
+c.childfname || ' ' || c.childmname || ' ' || c.childlname as cname,
+ r.fname || ' ' || r.mname || ' ' || r.lname as pname,
+ decode(r.relationtypeid, 1, 'father', 2, 'mother') as ptype,
+ c.gender as csex,
+ sg.studgroupname as class,
+ sec.section as sec,
+ s.id as scode,
+ trim(s.schoolname) as sname,
+ trim(b2.name) as b2,
+ trim(b1.name) as b1,
+ trim(b.name) as b 
+ from eg_school s, egems_studentgroup sg, egems_schstu_association scg, eg_section sec, egems_student stu, egclts_child c, egclts_childrelation cr, egclts_relation r, eg_boundary b, eg_boundary b1, eg_boundary b2, eg_boundary_type bt 
+ where s.id_adm_boundary = b.id_bndry 
+and b.parent = b1.id_bndry 
+and b1.parent = b2.id_bndry 
+and b.id_bndry_type = bt.id_bndry_type 
+and bt.id_heirarchy_type = 1 
+and sg.schoolid = s.id 
+and sg.STUDENTGROUPID = scg.STUDENTGROUPID 
+and sg.sectionid = sec.sectionid 
+and scg.STUDENTID = stu.studentid 
+and sg.studgroupname = '5' 
+and scg.academicyearid = 102 
+and stu.childid = c.childid 
+and c.childid = cr.childid (+)
+and cr.childrelationid = r.relationid (+)
+and r.relationtypeid in (1, 2)
+and stu.statusid=1
+and s.id in (32051, 33390, 32875, 32698, 33325, 33309, 33083, 32133, 33084, 32568)
+  </query>
+  <common format="|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|p{2cm}|l|l|">
+    <item tvar="\rule{0cm}{0.75cm}">Sl.no.</item>
+    <item tvar="\relax">Name</item>
+    <item tvar="\relax">Father</item>
+    <item tvar="\relax">Mother</item>
+    <item tvar="\relax">Sex</item>
+    <item tvar="\relax">DoB</item>
+    <item tvar="\relax">\makecell{Mother\\tongue}</item>
+  </common>
+  <instructions>
+    <type name="yn">Correct=1; Wrong=0</type>
+    <type name="blank">\relax</type>
+    <type name="cw">\makecell[t]{Correct=\ding{51},Wrong=\ding{53}}</type>
+  </instructions>
+  <titles>
+    <title name="domain">Questions</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="EVS">
+    <question>
+      <text>1a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>1b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>2a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>2b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>2c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>3</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>4</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>5a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>5b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>5c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>5d</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>6a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>6b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>6c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>6d</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>7a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>7b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>7c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>7d</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>7e</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>8a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>8b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>8c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>8d</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>9</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>10a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>10b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>11a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>11b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>11c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>12</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>13</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>14</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>15a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>15b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>15c</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="Mathematics">
+    <question>
+      <text>16</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>17</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>18a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>18b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>18c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>18d</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>19a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>19b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>19c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>19d</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>20</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>21a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>21b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>21c</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+ <domain name="General">
+  </domain>
+
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

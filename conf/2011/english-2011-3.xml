@@ -1,0 +1,116 @@
+<assessment name="eng-2011-blank-1">
+  <preamble>
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std.3}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{images/logo-full.jpg}}
+\chead{\textbf{Block:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt}}
+\rhead{\textbf{School:} \rule{6cm}{0.3pt}\\ \textbf{Evaluator:} \rule{5cm}{0.3pt}}
+\lfoot{Form ID: }
+\cfoot{\small{Akshara -- English PreTest -- July2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+select  stu.studentid as sid, c.childfname || ' ' || c.childmname || ' ' || c.childlname as cname, r.fname || ' ' || r.mname || ' ' || r.lname as pname, decode(r.relationtypeid, 1, 'father', 2, 'mother') as ptype, c.gender as csex, sg.studgroupname as class, sec.section as sec, s.id as scode, trim(s.schoolname) as sname, trim(b2.name) as b2, trim(b1.name) as b1, trim(b.name) as b from eg_school s, egems_studentgroup sg, egems_schstu_association scg, eg_section sec, egems_student stu, egclts_child c, egclts_childrelation cr, egclts_relation r, eg_boundary b, eg_boundary b1, eg_boundary b2, eg_boundary_type bt where s.id_adm_boundary = b.id_bndry and b.parent = b1.id_bndry and b1.parent = b2.id_bndry and b.id_bndry_type = bt.id_bndry_type and bt.id_heirarchy_type = 1 and sg.schoolid = s.id and sg.STUDENTGROUPID = scg.STUDENTGROUPID and sg.sectionid = sec.sectionid and scg.STUDENTID = stu.studentid and sg.studgroupname = '3' and scg.academicyearid = 102 and stu.childid = c.childid and c.childid = cr.childid and cr.childrelationid = r.relationid and r.relationtypeid in (1, 2) 
+--and s.id in (32465, 33306, 33288, 33294, 32159, 32565, 33310, 33311, 33293, 32276, 32830, 32020, 32469, 32156, 32564, 32273, 32752, 32656, 32829, 32361, 32153, 32150, 32151, 33891, 32155, 33285, 32149, 33291, 32568, 32567, 33292, 32154, 32657, 33281, 32653, 32563, 32158, 32022, 33290, 32152, 32566, 33282, 32023, 32157, 32466, 32274, 32360, 33300, 32275, 32018, 33299, 33301, 32506, 32305, 32072, 32308, 32309, 32691, 33141, 33154, 32697, 32612, 32307, 33143, 32690, 32204, 33142, 32509, 32608, 32508, 32074, 32693, 32696, 32073, 32610, 32315, 32211, 32606, 32504, 33151, 32613, 32213, 32202, 32607, 32609, 32312, 32208, 33139, 32207, 32311, 32505, 32205, 33156, 33149, 32310, 32692, 33147, 32214, 33148, 32203, 32688, 32316, 32314, 32215, 33161, 33152, 33157, 32209, 33160, 32075, 33159, 32694, 32210, 32507, 32206, 33158, 32695, 33155, 32503, 32070, 32071, 32313, 32068, 33150, 32127, 33089, 32129, 32441, 33075, 32446, 33069, 32452, 32444, 32440, 33074, 33092, 33071, 32130, 32450, 32449, 33090, 32256, 32448, 33086, 33068, 32442, 32125, 32447, 32003, 33070, 32439, 33073, 33091, 32254, 31997, 32002, 33085, 32443, 32122, 32252, 32134, 32255, 32251, 32453, 32451, 33081, 31998, 32000, 33077, 32438, 33083, 32253, 32437, 33082, 33080, 32133, 31999, 32001, 32128, 33079, 32132, 32345, 33123, 33103, 33119, 32266, 33133, 33134, 33106, 32357, 32010, 33121, 32265, 33126, 32464, 33122, 32352, 32259, 33127, 32260, 32147, 32459, 32139, 33124, 33093, 32269, 32014, 33135, 33109, 32551, 32560, 32146, 32140, 32144, 32142, 32258, 32455, 32456, 33097, 33125, 32263, 33111, 33118, 33117, 33099, 33120, 32454, 32268, 32553, 33094, 32267, 32643, 32350, 33113, 32354, 32349, 32651, 33101, 32006, 32348, 32640, 32647, 32644, 32460, 32005, 32008, 32554, 33096, 32007, 32457, 33107, 32016)
+and s.id in (32463, 32264, 33106, 32461, 32145, 32011, 32550, 32009, 33115, 32558, 32138, 32261, 32351, 32015, 32642, 32648, 32645, 32137, 32013, 33129, 33100, 32462, 33098, 32646, 33102, 32458, 32641, 32552)
+  </query>
+  <common format="|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|p{2cm}|l|l|">
+    <item tvar="\rule{0cm}{0.75cm}">Sl.no.</item>
+    <item tvar="\relax">Name</item>
+    <item tvar="\relax">Father</item>
+    <item tvar="\relax">Mother</item>
+    <item tvar="\relax">Sex</item>
+    <item tvar="\relax">DoB</item>
+    <item tvar="\relax">\makecell{Mother\\tongue}</item>
+  </common>
+  <instructions>
+    <type name="yn">Correct=1; Wrong=0</type>
+    <type name="blank">\relax</type>
+    <type name="cw">\makecell[t]{Correct=\ding{51},Wrong=\ding{53}}</type>
+  </instructions>
+  <titles>
+    <title name="domain">Questions</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="o">
+    <question>
+      <text>I</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>II</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>III</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="r">
+    <question>
+      <text>IV</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>V</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="w">
+    <question>
+      <text>VI</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>VII</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>VIII</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+ <domain name="General">
+  </domain>
+
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

@@ -1,0 +1,70 @@
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 4}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{images/logo-full.jpg}}
+\chead{\textbf{Block:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt}}
+\rhead{\textbf{School:} \rule{6cm}{0.3pt}\\ \textbf{Teacher:} \rule{5cm}{0.3pt}}
+\lfoot{Form ID: }
+\cfoot{\small{Akshara -- NNG PostTest -- Feb2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  \rowcolors{2}{}{yellow}
+\begin{longtable}{|l|p{4cm}|p{4cm}|p{4cm}|l|p{3cm}|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & & & & & \multicolumn{5}{|c|}{Competencies} \\ \hline
+ & & & & & & & & & \question{C1} & \question{C2} & \question{C3} & \question{C4} & \question{C5} \\ \hline
+ & & & & & & & & & $/20$ & \multicolumn{2}{|c|}{$/15$} & \multicolumn{2}{|c|}{$/10$} \\ \hline
+Sl.no. & Name & Father & Mother & Sex & DoB & \makecell{Mother\\tongue} & Section &  & 1 & 2 & 3 & 4 & 5\endhead \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & \\ \hline
+\end{longtable}
+\rowcolors{1}{}{}
+
+%%\pagebreak
+
+
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} & HM's signature \\
+    & Date
+    \end{tabular}
+  
+
+\end{document}

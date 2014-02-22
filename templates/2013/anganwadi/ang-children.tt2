@@ -1,0 +1,52 @@
+[% USE Latex(filter='pdf') %]
+[% FILTER pdf %]
+
+\documentclass[10pt]{article}
+\usepackage[a4paper,top=1.5cm,left=0.5cm,right=0.5cm,bottom=2cm,portrait]{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{makecell}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.1]{/home/brijesh/form_generation/logo.jpg}}
+\chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %] \\ \textbf{School:} [% school.name %] ([% num_stu %] children) }
+\rhead{\small{\textbf{ID:} [% school.scode %]}\\ \small{\textbf{Worker:} \rule{2.5cm}{0.3pt}}}
+\lfoot{\small{Form ID: }}
+\cfoot{\small{Akshara -- Student List-- 2013}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+
+\setlength{\headheight}{1.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+\begin{document}
+\begin{longtable}{|l|p{2.5cm}|l|l|l|p{2.5cm}|p{2.5cm}|p{3cm}|}
+\hline
+\textbf{StuID} & \textbf{Student Name} & \textbf{Sex} & \textbf{DoB} & \textbf{\makecell[b]{Mother\\ Tongue}} & \textbf{Father Name} & \textbf{Mother Name} & \textbf{Remarks}\\
+\endhead \hline
+
+[% FOREACH stu = students -%]
+\footnotesize{[% stu.sid %]} & \footnotesize{[% stu.name %]} & \footnotesize{[% stu.sex %]} & \footnotesize{[% stu.dob %]} & [% stu.lang%] & \footnotesize{[% stu.father %]} & \footnotesize{[% stu.mother %]}& \\ \hline
+[% END %]
+
+\end{longtable}
+
+Workers Signature: \rule{4cm}{0.3pt}  
+\newline
+\newline
+MP: \rule{4cm}{0.3pt}  MLA: \rule{4cm}{0.3pt} Gram Panchayat: \rule{4cm}{0.3pt}
+
+
+\end{document}
+[% END %]

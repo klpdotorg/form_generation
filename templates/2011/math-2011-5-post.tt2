@@ -1,0 +1,67 @@
+
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{3cm}
+\SetWatermarkText{Std. 5}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{/home/shivangi/src/assessments/images/logo-full.jpg}}
+\chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %] \\ \textbf{School:} [% school.name %] ([% num_stu %] children) \textbf{ID:} [% school.scode %]}
+\rhead{\textbf{Akshara Ganita -- PostTest-- 2011-2012} \\ \textbf{Class: 5}\\ \textbf{Teacher:} \rule{5cm}{0.3pt}}
+\lfoot{\small{Form ID: }}
+\cfoot{\small{Akshara -- NNG PreTest-- July2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  \rowcolors{2}{}{yellow}
+\begin{longtable}{|l|p{3.0cm}|p{3.0cm}|p{3.0cm}|l|p{1cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & & \multicolumn{10}{|c|}{Competencies} \\ \hline
+ & & & & & & \question{Q1} & \question{Q2} & \question{Q3} & \question{Q4} & \question{Q5} & \question{Q6} & \question{Q7} & \question{Q8} & \question{Q9} & \question{Q10} \\ \hline
+ & & & & & & \multicolumn{9}{|c|}{$/5$} & $/10$ \\ \hline
+\commonh{CID} & \commonh{Name} & \commonh{Father} & \commonh{Mother} & \commonh{Sex} &  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & [% stu.sex %] & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+\rowcolors{1}{}{}
+
+%%\pagebreak
+
+
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} & HM's signature \\
+    & Date
+    \end{tabular}
+  
+
+\end{document}
+
+[% END -%]

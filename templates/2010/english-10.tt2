@@ -1,0 +1,54 @@
+
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. [% school.class %]}
+\SetWatermarkScale{5}
+
+\def\heading{2010-11 English pre-test assessment}
+%% Headers and footers
+\lhead{\includegraphics[scale=0.50]{/home/shivangi/src/assessments/images/logo-full.jpg}}
+\chead{}
+\rhead{\textbf{Block:} [% school.b1 %] \textbf{Cluster:} [% school.b %]\\ \textbf{Name:} [% school.name %] ([% num_stu %] children) \textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara-- English Pre-test Assessment -- July 2010}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{1.1cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  \begin{longtable}{|l|p{5.0cm}|p{5.0cm}|p{5.0cm}|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & & \multicolumn{10}{|c|}{Questions} \\ \hline
+ & & & & & & \question{1} & \question{2} & \question{3} & \question{4} & \question{5} & \question{6} & \question{7} & \question{8} & \question{9} & \question{10} \\ \hline
+ & & & & & & \multicolumn{10}{|c|}{\makecell[t]{Correct=\ding{51},Wrong=\ding{53}}} \\ \hline
+CID & Name & Father & Mother & Sex &  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & [% stu.sex %] & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+%%\pagebreak
+
+
+
+\end{document}
+
+[% END -%]

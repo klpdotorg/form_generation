@@ -1,0 +1,150 @@
+<assessment name="eng-2011-mid-1">
+  <preamble>
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std.2}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{images/logo-full.jpg}}
+\chead{\textbf{Block:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt}}
+\rhead{\textbf{School:} \rule{6cm}{0.3pt}\\ \textbf{Evaluator:} \rule{5cm}{0.3pt}}
+\lfoot{Form ID: }
+\cfoot{\small{Akshara -- English MidTest -- 2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+select stu.id as sid,
+       stu."otherStudentId" as otherid,
+       ARRAY_TO_STRING(ARRAY[c."firstName",c."middleName",c."lastName"],' ') as cname,
+       ARRAY_TO_STRING(ARRAY[r.first_name,r.middle_name,r.last_name],' ') as pname,
+       lower(r.relation_type) as ptype,
+       to_char(c.dob,'DD-MON-YYYY') as cdob,
+       c.gender as csex,
+       l.name as clang,
+       sg.name as class,
+       sg.section as section,
+       s.id as scode,
+       s.name as sname,
+       b2.name as b2,
+       b1.name as b1,
+       b.name as b
+from schools_institution s,
+ schools_studentgroup sg,
+ schools_student_studentgrouprelation stusg,
+ schools_student stu,
+ schools_child c left outer join schools_moi_type l on (c.mt_id=l.id) left outer join schools_relations r on (c.id=r.child_id),
+ schools_boundary b,
+ schools_boundary b1,
+ schools_boundary b2,
+ schools_boundary_type bt  
+where s.boundary_id = b.id 
+ and b.parent_id= b1.id 
+ and b1.parent_id = b2.id 
+ and b.boundary_type_id = 1  
+ and s.id = sg.institution_id 
+ and sg.id = stusg.student_group_id 
+ and sg.group_type='Class' 
+ and stusg.student_id = stu.id 
+ and stu.active = 2 
+ and stusg.academic_id = 102 
+ and stu.child_id = c.id 
+ and s.active=2
+ and s.id in (36180, 36178, 36182, 36172, 36181, 36177, 36176, 36175, 36174, 36179, 35878, 35883, 36137, 35882, 35879, 35875, 36139, 35876, 36138, 35876, 35884, 35877, 35881, 36173)
+  </query>
+  <common format="|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|p{2cm}|l|l|">
+    <item tvar="\rule{0cm}{0.75cm}">Sl.no.</item>
+    <item tvar="\relax">Name</item>
+    <item tvar="\relax">Father</item>
+    <item tvar="\relax">Mother</item>
+    <item tvar="\relax">Sex</item>
+    <item tvar="\relax">DoB</item>
+    <item tvar="\relax">\makecell{Mother\\tongue}</item>
+  </common>
+  <instructions>
+    <type name="yn">Correct=1; Wrong=0</type>
+    <type name="blank">\relax</type>
+    <type name="cw">\makecell[t]{Correct=\ding{51},Wrong=\ding{53}}</type>
+  </instructions>
+  <titles>
+    <title name="domain">Questions</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="o">
+    <question>
+      <text>I</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>II</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>III</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="r">
+    <question>
+      <text>IV</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>V</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="w">
+    <question>
+      <text>VI</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>VII</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>VIII</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+ <domain name="General">
+  </domain>
+
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

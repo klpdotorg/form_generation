@@ -1,0 +1,98 @@
+<assessment name="nng2-target-5">
+  <preamble>
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 5}
+\SetWatermarkScale{5}
+
+\def\heading{2009-10 NNG-2 (Target) assessment}
+%% Headers and footers
+\lhead{\makecell[l]{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %]}}
+\chead{\textbf{School:} \parbox{5cm}{[% school.name %]} }
+\rhead{\textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- NNG Level 2 (Target) -- January 2010}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <common format="|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|">
+    <item tvar="[% stu.sid %]">\commonh{CID}</item>
+    <item tvar="[% stu.name %]">\commonh{Name}</item>
+    <item tvar="[% stu.father %]">\commonh{Father}</item>
+    <item tvar="[% stu.mother %]">\commonh{Mother}</item>
+    <item tvar="[% stu.sex %]">\commonh{Sex}</item>
+  </common>
+  <instructions>
+    <type name="fifteen">$/15$</type>
+    <type name="twentyfive">$/25$</type>
+    <type name="five">$/5$</type>
+    <type name="yn">Yes/No</type>
+    <type name="att">\makecell[l]{Low($&lt;30$\%)\\Medium($30$-$70$\%)\\Good($&gt;70$\%)}</type>
+  </instructions>
+  <titles>
+    <title name="domain">Competencies</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Competencies">
+    <question>
+      <text>C1</text>
+      <instruction>fifteen</instruction>
+    </question>
+    <question>
+      <text>C2</text>
+      <instruction>twentyfive</instruction>
+    </question>
+    <question>
+      <text>C3</text>
+      <instruction>five</instruction>
+    </question>
+    <question>
+      <text>C4</text>
+      <instruction>five</instruction>
+    </question>
+  </domain>
+  <domain name="Others">
+    <question>
+      <text>\makecell{Parihara\\ bodhane?}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Attendance</text>
+      <instruction>att</instruction>
+    </question>
+  </domain>
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

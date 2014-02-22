@@ -1,0 +1,87 @@
+<assessment name="reading-5">
+  <preamble>
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 5}
+\SetWatermarkScale{5}
+
+\def\heading{2009-10 Oduve nanu}
+%% Headers and footers
+\lhead{\makecell[l]{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %]}}
+\chead{}
+\rhead{\textbf{Name:} \parbox{5cm}{[% school.name %]} \textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- Oduve nanu -- January 2010}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <common format="|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|">
+    <item tvar="[% stu.sid %]">\commonh{CID}</item>
+    <item tvar="[% stu.name %]">\commonh{Name}</item>
+    <item tvar="[% stu.father %]">\commonh{Father}</item>
+    <item tvar="[% stu.mother %]">\commonh{Mother}</item>
+    <item tvar="[% stu.sex %]">\commonh{Sex}</item>
+  </common>
+  <instructions>
+    <type name="yn">Yes/No</type>
+    <type name="blank">\relax</type>
+  </instructions>
+  <titles>
+    <title name="domain">Reading level</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Competencies">
+    <question>
+      <text>O</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>L</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>W</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>S</text>
+      <instruction>blank</instruction>
+    </question>
+    <question>
+      <text>P</text>
+      <instruction>blank</instruction>
+    </question>
+  </domain>
+  <domain name="Others">
+    <question>
+      <text>Active?</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <epilogue>
+  </epilogue>
+</assessment>

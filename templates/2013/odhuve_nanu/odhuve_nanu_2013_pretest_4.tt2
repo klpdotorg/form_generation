@@ -1,0 +1,60 @@
+[% USE Latex(format='pdf');
+
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=1.5cm,left=0.5cm,right=0.5cm,bottom=2cm,portrait]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\pagestyle{fancy}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.08]{/home/brijesh/form_generation/akshara_logo_new.jpg}}
+\chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %] \\ \textbf{School:} [% school.name %] ([% num_stu %] children) \textbf{ID:}[% school.scode %]}
+\rhead{\textbf{Odhuve Nanu- pretest -2013} \\ \LARGE{\textbf{Class: 4}}\\ \small{\textbf{Section:}} \rule{1cm}{0.3pt}}
+
+\setlength{\headheight}{1.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+\begin{longtable}{|l|p{3cm}|p{3cm}|p{3cm}|l|l|l|}
+\hline
+%% & & & & & & & \multicolumn{7}{|c|}{Oral Test} \\ \hline
+%% & & & & & & & \question{Q1} & \question{Q2a} & \question{Q2b} & \question{Q3a} & \question{Q3b} & \question{Q4a} & \question{Q4b} \\ \hline 
+%% & & & & & & & \multicolumn{7}{|c|}{Correct=\ding{51},Wrong=\ding{53}, Not attempted=NA} \\ \hline
+\rule{0cm}{0.8cm}CID & Student's Name & Father's Name & Mother's Name & Sex & DoB  & Grade  \endhead \hline
+[% FOREACH stu = students -%]
+\rule{0cm}{0.7cm}[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & [% stu.sex %] & [% stu.dob %] &  \\ \hline
+[% END %]
+\rule{0cm}{0.7cm} &  &  &  &  &  &  \\ \hline
+\rule{0cm}{0.7cm} &  &  &  &  &  &  \\ \hline
+\rule{0cm}{0.7cm} &  &  &  &  &  &  \\ \hline
+\rule{0cm}{0.7cm} &  &  &  &  &  &  \\ \hline
+\rule{0cm}{0.7cm} &  &  &  &  &  &  \\ \hline
+
+\end{longtable}
+~\\
+~\\
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{4cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} & HM's signature: \rule{4cm}{0.3pt}  \hspace{2cm}Date: \rule{4cm}{0.3pt}
+    \\  & \\ & Field Investigator: \rule{4cm}{0.3pt}
+    \end{tabular}
+ 
+\end{document}
+[% END -%]

@@ -1,0 +1,270 @@
+﻿<assessment name="preschool">
+  <common>
+    <item>Sl.No.</item>
+    <item>\kn{ಮಗುವಿನ ಹೆಸರು}</item>
+    <item>\kn{ತಂದೆಯ ಹೆಸರು}</item>
+    <item>\kn{ತಾಯಿಯ ಹೆಸರು}</item>
+    <item>\kn{ಲಿಂಗ}</item>
+    <item>\kn{ಹುಟ್ಟಿದ ದಿನ}</item>
+  </common>
+  <instructions>
+    <type name="yn">\kn{ಹೌದು=1; ಇಲ್ಲ=0}</type>
+    <type name="yn1">\kn{\makecell[b]{ಹೌದು=1 \\ ಇಲ್ಲ=0}}</type>
+    <type name="lt2">\kn{\makecell[b]{2=1 \\ 2ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}}</type>
+    <type name="lt3">\kn{\makecell[b]{3=1 \\ 3ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}}</type>
+    <type name="lt4">\kn{\makecell[b]{4=1 \\ 4ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}}</type>
+    <type name="lt5">\kn{\makecell[b]{5=1 \\ 5ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}}</type>
+    <type name="lt20">\kn{\makecell[b]{20=1 \\ 20ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}}</type>
+    <type name="b2a5">\kn{\makecell[b]{2ರಿಂದ5=1 \\ 2ಕ್ಕಿಂತ \\ ಕಡಿಮೆ=0}}</type>
+  </instructions>
+  <titles>
+    <title name="domain">\kn{ಕೌಶಲ ಕ್ಷೇತ್ರಗಳು}</title>
+    <title name="question" size="9cm">\kn{ಚಟುವಟಿಕೆಗಳ  ಪಟ್ಟ}</title>
+    <title name="instruction" size="3cm"></title>
+    <title name="number">\kn{ಅಂಕ}</title>
+  </titles>
+  <domain name="\kn{ಸಾಮಾನ್ಯ ಅರಿವು}">
+    <question>
+      <text>\kn{ಮಗು ತನ್ನ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ತನ್ನ ವಯಸ್ಸು ಹೇಳುತ್ತದೆಯೇ?}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ತಾಯಿಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ತಂದೆಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಶಾಲೆಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?}</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="\kn{ಸ್ಥೂಲ ಚಲನೆಯ ಕೌಶಲಗಳು}">
+    <question>
+      <text>\kn{ಚೆಂಡನ್ನು ಹಿಡಿಯುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಚೆಂಡನ್ನು ಎಸೆಯುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಜಿಗಿಯುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ನೇರವಾದ ಗೆರೆಯ ಮೇಲೆ ನೆಡೆಯುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="\kn{ಸ್ವ ಸಹಾಯ ಕೌಶಲಗಳು}">
+    <question>
+      <text>\kn{ದಾರವನ್ನು ರಂಧ್ರಗಳಲ್ಲಿ ಪೋಣಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಅಂಗಿಯ ಗುಂಡಿಗಳನ್ನು ಹಾಕುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಅಂಗಿಯ ಗುಂಡಿಗಳನ್ನು ಬಿಚ್ಚುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ನೀರನ್ನು ಸುರಿಯುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="\kn{ಕೈ ಚಳಕ ಬಳಕೆ ಕೌಶಲಗಳು}">
+    <question>
+      <text>\kn{\makecell[b]{ತೋರು ಬೆರಳಿನಿಂದ ಬಣ್ಣ ಹಾಕುವುದು \\ (ಚಟುವಟಿಕೆ ಹಾಳೆ 14 ಉಪಯೊಗಿಸಿ)}}(use TLM-14)</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಗೋಪುರ ನಿರ್ಮಾಣ (ಐದು ಘನಾಕ್ರತಿ)}</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="\kn{ಭಾಷಾ ಬೆಳವಣಿಗೆ}">
+    <question>
+      <text>\kn{ಮೂರು ಪದಗಳ ವಾಕ್ಯ ರಚನೆ}</text>
+      <instruction>lt3</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮೂರು ಸೂಚನೆಗಳನ್ನು ಅನುಸರಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಶಿಶು ಗೀತೆ ಹೇಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಪ್ರಾಥಮಿಕ ಬಣ್ಣಗಳನ್ನು ಗುರುತಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಹಣ್ಣು ಮತ್ತು ತರಕಾರಿಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮೊದಲ ಶಬ್ದದ ಉಚ್ಛಾರಣೆ}</text>
+      <instruction>lt5</instruction>
+    </question>
+    <question>
+      <text>\kn{ಕ್ರಿಯಾಪದಗಳನ್ನು ಗುರುತಿಸುವುದು}</text>
+      <instruction>lt3</instruction>
+    </question>
+    <question>
+      <text>\kn{ದೇಹದ ಅಂಗಗಳನ್ನು ಗುರುತಿಸುವುದು}</text>
+      <instruction>lt5</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಮೇಲೆ/ಕೆಳಗೆ ತೋರಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಒಳಗೆ/ಹೊರಗೆ ತೋರಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಮುಂದೆ/ಹಿಂದೆ ತೋರಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಎಡ/ಬಲ ತೋರಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಕಥೆ ಹೇಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="\kn{ಬೌದ್ಧಿಕ ಬೆಳವಣಿಗೆ}">
+    <question>
+      <text>\kn{ಮಗು ಬಣ್ಣಗಳ ಚೂರುಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಆಕಾರಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಆಕಾರಗಳ ಹೆಸರುಗಳನ್ನು ಹೇಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಗಾತ್ರಾನುಸಾರ ಚೂರುಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು}</text>
+      <instruction>lt4</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ವೃತ್ತಗಳನ್ನು ಕ್ರಮಬದ್ಧವಾಗಿ ಜೋಡಿಸುವುದು}</text>
+      <instruction>yn1</instruction>
+    </question>
+  </domain>
+  <domain name="\kn{ಸಾಮಾಜಿಕ ಭಾವನಾತ್ಮಕ ಬೆಳವಣಿಗೆ}">
+    <question>
+      <text>\kn{ಮಗು ಆಟಿಕೆಗಳನ್ನು ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ತನ್ನ ಸರದಿಗಾಗಿ ಕಾಯುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಭಾವನೆಗಳನ್ನು ವ್ಯಕ್ತಪಡಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಸ್ನೇಹಿತರನ್ನು ಮಾಡಿಕೊಳ್ಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+  <domain name="\kn{ಶಿಕ್ಷಣ ಪೂರ್ವ-ಓದುವುದು}">
+    <question>
+      <text>\kn{\makecell[b]{ಮಗು ಗುಂಪಿಗೆ ಸೇರದ ಆಕಾರವನ್ನು ಗುರುತಿಸುವುದು.\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 38 ಉಪಯೊಗಿಸಿ)}}</text>
+      <instruction>b2a5</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು} A \kn{ಯಿಂದ} Z \kn{ವರೆಗೆ ಗುರುತಿಸುವುದು}</text>
+      <instruction>lt5</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಅ ಯಿಂದ ಅ: ವರೆಗೂ ಗುರುತಿಸುವುದು}</text>
+      <instruction>lt4</instruction>
+    </question>
+</domain>
+<domain name="\kn{ ಶಿಕ್ಷಣ ಪೂರ್ವ-ಬರೆಯುವುದು}">
+    <question>
+      <text>\kn{\makecell[b]{ಮಗು ಆಕಾರಗಳ ಮೇಲೆ ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 41 ಉಪಯೊಗಿಸಿ)}}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{\makecell[b]{ಮಗು ಆಕಾರಗಳನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 42 ಉಪಯೊಗಿಸಿ)}}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{\makecell[b]{ಮಗು ಅಕ್ಷರಗಳನ್ನು ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 43 ಉಪಯೊಗಿಸಿ)}}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{\makecell[b]{ಮಗು ಅಕ್ಷರಗಳನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 44 ಉಪಯೊಗಿಸಿ)}}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{\makecell[b]{ಮಗು ಸಂಖ್ಯೆಗಳನ್ನು ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 45 ಉಪಯೊಗಿಸಿ)}}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{\makecell[b]{ಮಗು ಸಂಖ್ಯೆಗಳನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 46 ಉಪಯೊಗಿಸಿ)}}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಪೆನ್ಸಿಲ್ ಚೆನ್ನಾಗಿ ಹಿಡಿಯುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ಪೆನ್ಸಿಲ್ ನಿಂದ ಒತ್ತಿ ಬರೆಯುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗುವಿನ ಪೆನ್ಸಿಲ್ ನ ನಿಯಂತ್ರಣ ಸರಿಯಾಗಿದೆ}</text>
+      <instruction>yn</instruction>
+    </question>
+   </domain>
+<domain name="\kn{ ಶಿಕ್ಷಣ ಪೂರ್ವ- ಗಣಿತ}">
+    <question>
+      <text>\kn{ಹೆಚ್ಚು/ಕಡಿಮೆ ಹೇಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು 9 ವಸ್ತುಗಳನ್ನು ಎಣಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು 1 ರಿಂದ 9 ರವರೆಗೆ ಗುರುತಿಸುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು 1 ರಿಂದ 20 ರವರೆಗಿನ ಸಂಖ್ಯೆಗಳನ್ನು ಎಣಿಸುವುದು}</text>
+      <instruction>lt20</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ವಾರದ ದಿನಗಳನ್ನು ಹೇಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗು ತಿಂಗಳುಗಳನ್ನು ಹೇಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>\kn{ಮಗುವಿಗೆ ಪ್ರಸ್ತುತ ವರ್ಷ ಯಾವುದು ಎಂದು ಕೇಳುವುದು}</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+</assessment>

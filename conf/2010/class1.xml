@@ -1,0 +1,147 @@
+<assessment name="class1">
+  <preamble>
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\usepackage[table,gray]{xcolor}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. [% school.class %]}
+\SetWatermarkScale{5}
+
+\def\heading{Grading Sheet - Class 1 Carry Through Assessment}
+%% Headers and footers
+\lhead{\includegraphics[scale=0.50]{/home/shivangi/src/assessments/images/logo-full.jpg}}
+\chead{}
+\rhead{\textbf{Block:} [% school.b1 %] \textbf{Cluster:} [% school.b %]\\ \textbf{Name:} [% school.name %] ([% num_stu %] children) \textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara Foundation. Research and Evaluation. December 2010}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{1.1cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>select  stu.studentid as sid, c.childfname || ' ' || c.childmname || ' ' || c.childlname as cname, r.fname || ' ' || r.mname || ' ' || r.lname as pname, decode(r.relationtypeid, 1, 'father', 2, 'mother') as ptype, c.gender as csex,replace(concat(sg.studgroupname, sec.section), 'NoSection') as class, s.id as scode, trim(s.schoolname) as sname, trim(b2.name) as b2, trim(b1.name) as b1, trim(b.name) as b from eg_school s, egems_studentgroup sg, egems_schstu_association scg, eg_section sec, egems_student stu, egclts_child c, egclts_childrelation cr, egclts_relation r, eg_boundary b, eg_boundary b1, eg_boundary b2, eg_boundary_type bt where s.id_adm_boundary = b.id_bndry and b.parent = b1.id_bndry and b1.parent = b2.id_bndry and b.id_bndry_type = bt.id_bndry_type and bt.id_heirarchy_type = 1 and sg.schoolid = s.id and sg.STUDENTGROUPID = scg.STUDENTGROUPID and sg.sectionid = sec.sectionid and scg.STUDENTID = stu.studentid and sg.studgroupname = '1' and scg.academicyearid = 101 and stu.childid = c.childid and c.childid = cr.childid and cr.childrelationid = r.relationid and r.relationtypeid in (1, 2) and s.id in (33342,32843)</query>
+  <common format="|l|p{2.5cm}|p{2.5cm}|p{2.5cm}|l|">
+    <item tvar="[% stu.sid %]">CID</item>
+    <item tvar="[% stu.name %]">Name</item>
+    <item tvar="[% stu.father %]">Father</item>
+    <item tvar="[% stu.mother %]">Mother</item>
+    <item tvar="[% stu.sex %]">Sex</item>
+  </common>
+  <instructions>
+    <type name="yn">Yes=1; No=0</type>
+    <type name="cn">Correct=1; No=0</type>
+    <type name="fn">Fluent=1; No=0</type>
+    <type name="blank">\relax</type>
+    <type name="cw">\makecell[t]{Correct=\ding{51},Wrong=\ding{53}}</type>
+  </instructions>
+  <titles>
+    <title name="domain">Oral Test</title>
+    <title name="domain">Written Test</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+  </titles>
+  <domain name="Oral Test">
+    <question>
+      <text>1</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>2</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>3</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>4</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>5</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>6</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>7</text>
+      <instruction>fn</instruction>
+    </question>
+    <question>
+      <text>8</text>
+      <instruction>cn</instruction>
+    </question>
+  </domain>
+  <domain name="Written Test">
+    <question>
+      <text>9</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>10</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>11</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>12</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>13</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>14</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>15</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>16</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>17</text>
+      <instruction>cn</instruction>
+    </question>
+    <question>
+      <text>18</text>
+      <instruction>cn</instruction>
+    </question>
+  </domain>
+  <domain name="General">
+    <question>
+      <text>A</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>B</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+</assessment>

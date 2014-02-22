@@ -1,0 +1,64 @@
+
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm]{geometry}
+\usepackage{makecell}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 3}
+\SetWatermarkScale{5}
+
+\def\heading{2009-10 NNG-1 pre-test assessment}
+%% Headers and footers
+\lhead{\makecell[l]{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %]}}
+\chead{}
+\rhead{\textbf{Name:} \parbox{5cm}{[% school.name %]} \textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- NNG Level 1 Pre-test Assessment -- September 2009}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  \begin{longtable}{|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|l|l|l|l|l|}
+\hline
+ & & & & & & \multicolumn{4}{|c|}{Competencies} \\ \hline
+ & & & & & & \question{C1} & \question{C2} & \question{C3} & \question{C4} \\ \hline
+ & & & & & & $/20$ & $/30$ & \multicolumn{2}{|c|}{$/10$} \\ \hline
+\commonh{CID} & \commonh{Name} & \commonh{Father} & \commonh{Mother} & \commonh{Sex} &  & 1 & 2 & 3 & 4\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & [% stu.sex %] & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+%%\pagebreak
+
+
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} & HM's signature \\
+    & Date
+    \end{tabular}
+  
+
+\end{document}
+
+[% END -%]

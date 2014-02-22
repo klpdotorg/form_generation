@@ -1,0 +1,142 @@
+<assessment name="nng-2010-5">
+  <preamble>
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=0cm,right=0cm,bottom=2cm]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std. 5}
+\SetWatermarkScale{5}
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.2]{/home/alok/src/klp-common/images/logo-pic-only.jpg}\makecell[l]{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %]}}
+\chead{\textbf{School:} \parbox{5cm}{[% school.name %]} }
+\rhead{\textbf{ID:} [% school.scode %] \textbf{Teacher:}\rule{3cm}{0.3pt}}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- NNG PostTest -- Feb2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{30pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+select  stu.studentid as sid,
+	c.childfname || ' ' || c.childmname || ' ' || c.childlname as cname,
+	r.fname || ' ' || r.mname || ' ' || r.lname as pname,
+	decode(r.relationtypeid,
+        1, 'father',
+        2, 'mother') as ptype,
+	c.gender as csex,
+	sg.studgroupname as class,
+	s.id as scode,
+	trim(s.schoolname) as sname,
+	trim(b2.name) as b2, 
+	trim(b1.name) as b1, 
+	trim(b.name) as b
+from eg_school s, 
+	egems_studentgroup sg, 
+        egems_studgroup_mstr sgm,
+	egems_schstu_association scg, 
+	eg_section sec, 
+	egems_student stu, 
+	egclts_child c, 
+	egclts_childrelation cr, 
+	egclts_relation r, 
+	eg_boundary b, 
+	eg_boundary b1, 
+	eg_boundary b2, 
+	eg_boundary_type bt
+where 
+	s.id_adm_boundary = b.ID_BNDRY
+	and b.PARENT = b1.ID_BNDRY
+	and b1.PARENT = b2.ID_BNDRY
+	and b.id_bndry_type = bt.id_bndry_type
+	and bt.id_heirarchy_type = 1
+	and sg.schoolid = s.id
+	and sg.STUDENTGROUPID = scg.STUDENTGROUPID
+        and sg.groupid = sgm.groupid
+        and sgm.groupname = 'Class'
+        and sg.studgroupname = '5'
+	and sg.sectionid = sec.sectionid
+	and scg.STUDENTID = stu.studentid
+	and stu.is_active = 1
+	and stu.statusid = 1
+	and scg.academicyearid = 101
+	and stu.childid = c.childid
+	and c.childid = cr.childid (+)
+	and cr.childrelationid = r.relationid  (+)
+        and s.id in (14620,14621,14622,14623,14821,14625,14626,14627,35339,14628,14822,14823,14824,14629,14630,14826,14827,35340,14828,14631, 35341,14632,14634,14829,14830,14831,14832,14639,14640,14642,14643,14644,14833,14834,14835,14836,14646,14837,14647,14838)
+  </query>
+  <common format="|l|p{3.3cm}|p{3.3cm}|p{3.3cm}|l|">
+    <item tvar="[% stu.sid %]">\commonh{StuID}</item>
+    <item tvar="[% stu.name %]">\commonh{Name}</item>
+    <item tvar="[% stu.father %]">\commonh{Father}</item>
+    <item tvar="[% stu.mother %]">\commonh{Mother}</item>
+    <item tvar="[% stu.sex %]">\commonh{Sex}</item>
+  </common>
+  <instructions>
+    <type name="five">$/5$</type>
+    <type name="ten">$/10$</type>
+    <type name="fifteen">$/15$</type>
+    <type name="twentyfive">$/25$</type>
+  </instructions>
+  <titles>
+    <title name="domain">Competencies</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Competencies">
+    <question>
+      <text>C1</text>
+      <instruction>twentyfive</instruction>
+    </question>
+    <question>
+      <text>C2</text>
+      <instruction>fifteen</instruction>
+    </question>
+    <question>
+      <text>C3</text>
+      <instruction>ten</instruction>
+    </question>
+    <question>
+      <text>C4</text>
+      <instruction>ten</instruction>
+    </question>
+    <question>
+      <text>C5</text>
+      <instruction>five</instruction>
+    </question>
+  </domain>
+  <domain name="">
+  </domain>
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

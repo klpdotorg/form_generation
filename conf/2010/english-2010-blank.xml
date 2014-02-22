@@ -1,0 +1,113 @@
+<assessment name="eng-2010-blank">
+  <preamble>
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\pagestyle{fancy}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{images/logo-full.jpg}}
+\chead{\textbf{Block:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt}}
+\rhead{\textbf{School:} \rule{6cm}{0.3pt}\\ \textbf{Teacher:} \rule{5cm}{0.3pt}}
+\lfoot{Form ID: }
+\cfoot{\small{Akshara -- English PostTest -- Feb2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+  </query>
+  <common format="|l|p{3.5cm}|p{3.5cm}|p{3.5cm}|l|p{2cm}|l|l|">
+    <item tvar="\rule{0cm}{0.75cm}">Sl.no.</item>
+    <item tvar="\relax">Name</item>
+    <item tvar="\relax">Father</item>
+    <item tvar="\relax">Mother</item>
+    <item tvar="\relax">Sex</item>
+    <item tvar="\relax">DoB</item>
+    <item tvar="\relax">\makecell{Mother\\tongue}</item>
+    <item tvar="\relax">Class</item>
+  </common>
+  <instructions>
+    <type name="yn">Yes=1; No=0</type>
+    <type name="blank">\relax</type>
+    <type name="cw">\makecell[t]{Correct=\ding{51},Wrong=\ding{53}}</type>
+  </instructions>
+  <titles>
+    <title name="domain">Questions</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Questions">
+    <question>
+      <text>1</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>2</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>3</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>4</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>5</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>6</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>7</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>8</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>9</text>
+      <instruction>cw</instruction>
+    </question>
+    <question>
+      <text>10</text>
+      <instruction>cw</instruction>
+    </question>
+  </domain>
+ <domain name="General">
+  </domain>
+
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>

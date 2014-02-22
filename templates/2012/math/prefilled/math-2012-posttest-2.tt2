@@ -1,0 +1,72 @@
+[% USE Latex(format='pdf');
+   FILTER latex('pdf'); -%]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=1.5cm,left=0.5cm,right=0.5cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage{rotating}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+%%\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%%\usepackage{draftwatermark}
+%%\SetWatermarkFontSize{3cm}
+%%\SetWatermarkText{Std. 2}
+%%\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.2]{/home/shivangi/src/assessments/form_generation/logo.jpg}}
+\chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %] \\ \textbf{School:} [% school.name %] ([% num_stu %] children) \textbf{ID:} [% school.scode %]}
+\rhead{\textbf{Akshara Ganita -- PostTest-- 2012-2013} \\ \LARGE{\textbf{Class: 2}}\\ \small{\textbf{Field Investigator:}} \rule{5cm}{0.3pt}}
+
+\setlength{\headheight}{1.2cm}
+\renewcommand{\headrulewidth}{0.2pt}
+%%\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+%%  \rowcolors{2}{}{yellow}
+\begin{longtable}{|l|p{3.0cm}|p{3.0cm}|p{3.0cm}|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & & & \multicolumn{3}{|c|}{Numbers} & \multicolumn{2}{|c|}{Add/Subtraction} & \multicolumn{1}{|c|}{Geometry} \\ \hline
+ & & & & & & & \question{Counting} & \question{\makecell[b]{Reading \\and\\ Writing}} & \question{Ordering} & \question{Facts} & \question{Properties} & \question{\makecell[b]{Sorting \\Shapes}} \\ \hline
+ & & & & & & & \multicolumn{6}{|c|}{$/3$} \\ \hline
+CID & Student's Name & Father's Name & Mother's Name & Sex & MT & DoB  & 1 & 2 & 3 & 4 & 5 & 6\endhead \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & [% stu.sex %]& [% stu.mt %]&[% stu.dob %] & & & & & & \\ \hline
+[% END %]
+ & &  &  & & & & & & & & & \\ \hline
+ & &  &  & & & & & & & & & \\ \hline
+ & &  &  & & & & & & & & & \\ \hline
+ & &  &  & & & & & & & & & \\ \hline
+ & &  &  & & & & & & & & & \\ \hline
+ & &  &  & & & & & & & & & \\ \hline
+ & &  &  & & & & & & & & & \\ \hline
+ & &  &  & & & & & & & & & \\ \hline
+\end{longtable}
+\rowcolors{1}{}{}
+
+%%\pagebreak
+
+
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} & HM's signature: \rule{4cm}{0.3pt}  \hspace{2cm}Date: \rule{4cm}{0.3pt}
+    \\  & \\ & DiseCode: \rule{4cm}{0.3pt}
+    \end{tabular}
+  
+
+\end{document}
+[% END -%]

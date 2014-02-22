@@ -1,0 +1,72 @@
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a4paper,top=2cm,left=1.5cm,right=1.5cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\usepackage{pifont}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{10cm}
+\SetWatermarkText{Std.2}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{images/logo-full.jpg}\\ \small{Akshara -- English PostTest -- 2011-2012}}
+\chead{ \textbf{Form ID:}\rule{5cm}{0.3pt} \\ \textbf{Block:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt}}
+\rhead{\textbf{School:} \rule{6cm}{0.3pt}\\ \textbf{Class :2} \\ \textbf{Evaluator:} \rule{5cm}{0.3pt}}
+\lfoot{Form ID: }
+\cfoot{\small{Akshara -- English PreTest -- July2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{3.0cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\renewcommand{\arraystretch}{1.5}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  \rowcolors{2}{}{yellow}
+\begin{longtable}{|l|p{2cm}|p{2cm}|p{2cm}|l|p{1cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & & & & & & \multicolumn{22}{|c|}{Correct=\ding{51}; Wrong=\ding{53}} \\ \hline
+ & & & & & & & & \multicolumn{11}{|c|}{\cellcolor{yellow}Oral} & \multicolumn{3}{|c|}{\cellcolor{yellow}Reading} & \multicolumn{8}{|c|}{\cellcolor{yellow}Writing} \\ \hline
+ & & & & & & & & \multicolumn{3}{|c|}{\question{I}} & \multicolumn{4}{|c|}{\question{II}} & \multicolumn{3}{|c|}{\question{III}} & \multicolumn{1}{|c|}{\question{IV}} & \multicolumn{3}{|c|}{\question{V}} & \multicolumn{5}{|c|}{\question{VI}} & \multicolumn{3}{|c|}{\question{VII}} \\ \hline
+\small{\makecell{Sl.\\no.}} & Name & Father & Mother & Sex & DoB & \small{\makecell{Mother\\tongue}} &  & a & b & c & \multicolumn{1}{|c|}{\cellcolor{yellow}a} & b & c & d & \multicolumn{1}{|c|}{\cellcolor{yellow}a} & b & c & \multicolumn{1}{|c|}{\cellcolor{yellow}a} & \multicolumn{1}{|c|}{\cellcolor{yellow}a} & b & c & \multicolumn{1}{|c|}{\cellcolor{yellow}a} & b & c & d & e & \multicolumn{1}{|c|}{\cellcolor{yellow}a} & b & c \endhead \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\rule{0cm}{0.75cm} & \relax & \relax & \relax & \relax & \relax & \relax & & & & & & & & & & & & & & & & & & & & & & & \\ \hline
+\end{longtable}
+\rowcolors{1}{}{}
+
+%%\pagebreak
+
+
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} & HM's signature \\
+    & Date \\
+    \end{tabular}
+  
+
+\end{document}

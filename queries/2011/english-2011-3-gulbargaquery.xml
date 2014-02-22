@@ -1,0 +1,44 @@
+<query>
+      select  distinct stu.id as sid,
+        ARRAY_TO_STRING(ARRAY[c."firstName",c."middleName",c."lastName"],' ') as cname,
+        ARRAY_TO_STRING(ARRAY[r.first_name,r.middle_name,r.last_name],' ') as pname,
+        lower(r.relation_type) as ptype,
+        ARRAY_TO_STRING(ARRAY[t."firstName",t."middleName",t."lastName"],' ') as tname,
+        to_char(c.dob, 'DD-MON-YYYY') as cdob,
+        c.gender as csex,
+        sg.name as class,
+        sg.section as sec,
+        s.id as scode,
+        trim(s.name) as sname,
+        trim(b2.name) as b2,
+        trim(b1.name) as b1,
+        trim(b.name) as b
+from schools_studentgroup sg,
+     schools_student_studentgrouprelation stusg,
+     schools_student stu,
+     schools_child c  left outer join schools_relations r on (c.id=r.child_id),
+     schools_institution s left outer join schools_staff t on (s.id=t.institution_id and t.staff_type_id=3),
+     schools_boundary b,
+     schools_boundary b1,
+     schools_boundary b2
+where
+        s.boundary_id= b.id
+        and b.parent_id= b1.id
+        and b1.parent_id = b2.id
+        and b.boundary_type_id=1
+        and s.id = sg.institution_id
+        and sg.id = stusg.student_group_id
+        and stusg.student_id = stu.id
+        and stu.active = 2
+        and stusg.academic_id = 102
+        and stu.child_id = c.id
+        and stusg.active=2
+        and s.active=2
+        and sg.group_type='Class'
+        and sg.name='3'
+        and b1.id=480
+        and (s.id in (14620,14621,14622,14623,14625,14626,14627,14628,14629,14630,14631,14632,14634,14639,14640,14642,14643,14644,14646,14647,35341,35339,14821,14822,14823,14824,14826,14827,14828,14829,14830,14831,14832,14833,14835,14836,14837,14838,35340)
+or s.id in (select distinct sg.institution_id from schools_institution s,schools_boundary b,schools_boundary b1,schools_boundary b2, schools_answer se,schools_student_studentgrouprelation stusg,schools_studentgroup sg,schools_question q where se.student_id=stusg.student_id and stusg.student_group_id=sg.id and sg.group_type='Class' and se.question_id=q.id and q.assessment_id=67 and sg.institution_id=s.id and s.boundary_id=b.id and b.parent_id=b1.id and b1.parent_id=b2.id and b1.id=480))
+  </query>
+
+<query>

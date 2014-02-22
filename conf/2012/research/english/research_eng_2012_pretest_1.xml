@@ -1,0 +1,139 @@
+<assessment name="eng-2012-1">
+  <preamble>
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[legalpaper,top=2cm,left=0cm,right=0cm,bottom=2cm,landscape]{geometry}
+\usepackage{makecell}
+\usepackage[table,gray]{xcolor}
+\usepackage{graphicx}
+\usepackage{longtable}
+\usepackage{lastpage}
+\usepackage{multirow}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\usepackage{draftwatermark}
+\SetWatermarkFontSize{3cm}
+\SetWatermarkText{Std. 1}
+\SetWatermarkScale{5}
+
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.75]{/home/shivangi/src/assessments/images/logo-full.jpg}}
+\lhead{\includegraphics[scale=0.75]{images/logo-full.jpg}}
+\chead{\textbf{Block:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt} \\ \textbf{School:} \rule{6cm}{0.3pt}}
+\rhead{\textbf{Akshara English-- PreTest-- 2012-2013} \\ \textbf{Class: 1}\\ \textbf{Teacher:} \rule{5cm}{0.3pt}}
+\lfoot{\small{Form ID: }}
+\cfoot{\small{Akshara -- English PreTest-- June2012}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2.5cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+\newcommand{\instruct}[1]{\textbf{#1}}
+\newcommand{\question}[1]{\textbf{#1}}
+\newcommand{\commonh}[1]{\textbf{#1}}
+
+\title{\heading}
+\begin{document}
+  </preamble>
+  <query>
+  </query>
+  <common format="|l|p{2.0cm}|p{2.0cm}|p{2.0cm}|l|p{1cm}|l|l|">
+    <item tvar="\rule{0cm}{0.75cm}">Sl.no.</item>
+    <item tvar="\relax">Name</item>
+    <item tvar="\relax">Father</item>
+    <item tvar="\relax">Mother</item>
+    <item tvar="\relax">Sex</item>
+    <item tvar="\relax">DoB</item>
+    <item tvar="\relax">\makecell{Mother\\tongue}</item>
+    <item tvar="\relax">Section</item>
+  </common>
+  <instructions>
+    <type name="yn">Correct=1; Wrong=0</type>
+  </instructions>
+  <titles>
+    <title name="domain">Questions</title>
+    <title name="question"></title>
+    <title name="instruction"></title>
+    <title name="number"></title>
+  </titles>
+  <domain name="Oral Test">
+    <question>
+      <text>Q1</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q2a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q2b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q3a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q3b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q4a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q4b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q5a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q5b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q5c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q6a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q6b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q6c</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q7a</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q7b</text>
+      <instruction>yn</instruction>
+    </question>
+    <question>
+      <text>Q7c</text>
+      <instruction>yn</instruction>
+    </question>
+  </domain>
+   <domain name="General">
+  </domain>
+  <epilogue>
+    \begin{tabular}{lr}
+    \multirow{2}{*}{\framebox[6cm][t]{
+    \begin{minipage}{6cm}
+    School seal \\[2cm]
+    \end{minipage}
+    }} &amp; HM's signature \\
+    &amp; Date
+    \end{tabular}
+  </epilogue>
+</assessment>
