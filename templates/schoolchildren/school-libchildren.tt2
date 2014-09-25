@@ -1,0 +1,44 @@
+[% USE Latex(filter='pdf') %]
+[% FILTER pdf %]
+
+\documentclass[10pt]{article}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm]{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{xcolor}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%% Headers and footers
+\lhead{\includegraphics[scale=0.15]{/home/shivangi/src/assessments/form_generation/logo.jpg}}
+\chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %]}
+\rhead{\textbf{Name:} \parbox{5cm}{[% school.name %]}\\ \textbf{ID:} [% school.scode %]}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- Student List -- 2012-2013}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{2cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+\begin{longtable}{|l|l|p{2cm}|r@{}l|l|l|l|p{2cm}|p{2cm}|}
+\hline
+\textbf{StuID} & \textbf{OtherStuID} & \textbf{Name} & \multicolumn{2}{c|}{\textbf{Class}} & \textbf{Sex} & \textbf{DoB} & \textbf{Language} & \textbf{Father} & \textbf{Mother} \\
+\endhead \hline
+
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.otherid %] & \footnotesize{[% stu.name %]} & [% stu.class %] & [% stu.section %] & [% stu.sex %] & [% stu.dob %] & [% stu.lang %] & \footnotesize{[% stu.father %]} & \footnotesize{[% stu.mother %]} \\ \hline
+[% END %]
+
+\end{longtable}
+\end{document}
+[% END %]
+
+             

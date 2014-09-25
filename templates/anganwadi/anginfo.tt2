@@ -1,0 +1,53 @@
+[% USE Latex(filter='pdf') %]
+[% FILTER pdf %]
+
+\documentclass[12pt]{article}
+\usepackage[a4paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{setspace}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+\def\heading{2011-12 Anganwadi update}
+%% Headers and footers
+\lhead{}
+\chead{\heading}
+\rhead{}
+\lfoot{\small{[Name]}}
+\cfoot{\small{[Signature]}}
+\rfoot{\small{[Date]}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\title{\heading}
+\begin{document}
+
+\Large
+\doublespacing
+
+{\normalsize
+\begin{tabular}{lp{5cm}|lp{5cm}}
+Project: & [% school.project %] & Circle: & [% school.circle %] \\ \hline
+Anganwadi ID: & \multicolumn{3}{l}{[% school.id %]} \\ \hline
+Anganwadi name: & [% school.sname %] & Type: & [% school.stype %] \\ \hline
+Worker: & \multicolumn{3}{l}{[% school.worker %]} \\ \hline
+Address: & \multicolumn{3}{l}{[% school.address %]} \\ \hline
+Pin: & [% school.pin %] & Phone number: & \rule{2in}{0.5pt} \\ \hline
+Area: & \multicolumn{3}{l}{[% school.area %]} \\ \hline
+Landmark 1: & \multicolumn{3}{l}{[% school.landmark_1 %]} \\ \hline
+Landmark 2: & \multicolumn{3}{l}{[% school.landmark_2 %]} \\ \hline
+Institution Identifier 1: & \multicolumn{3}{l}{[% school.inst_id_1 %]} \\ \hline
+Institution Identifier 2: & \multicolumn{3}{l}{[% school.inst_id_2 %]} \\ \hline
+Bus Number: & \multicolumn{3}{l}{[% school.bus_no %]} \\ \hline
+MLA Const: & [% school.mlaconst %] & MLA Name: & [% school.mlaname %] \\ \hline
+MP Const: & [% school.mpconst %] & MP Name: & [% school.mpname %] \\ \hline
+Ward : & [% school.ward%] & Name: & [% school.wardname %] \\ \hline
+\end{tabular}
+}
+
+\pagebreak
+
+\end{document}
+[% END -%]

@@ -2,7 +2,7 @@
 [% FILTER pdf %]
 
 \documentclass[10pt]{article}
-\usepackage[a4paper,top=2cm,left=0.5cm,right=0.5cm,bottom=3cm,portrait]{geometry}
+\usepackage[a4paper,top=2cm,left=0.5cm,right=0.5cm,bottom=2cm,portrait]{geometry}
 \usepackage{longtable}
 \usepackage{booktabs}
 \usepackage{graphicx}
@@ -16,26 +16,27 @@
 \usepackage{textcomp}
 
 %% Headers and footers
-\lhead{\includegraphics[scale=0.1]{/home/brijesh/form_generation/akshara_logo_new.jpg}}
+\lhead{\includegraphics[scale=0.15]{/home/shivangi/src/assessments/form_generation/logo.jpg}}
 \chead{\textbf{Block:} [% school.b1 %] \\ \textbf{Cluster:} [% school.b %] \\  ([% num_stu %] children) }
 \rhead{\textbf{School:} [% school.name %]  \\ \small{\textbf{ID:} [% school.scode %]}}
-\cfoot{\small{Akshara -- Student List-- August2014}}
+\lfoot{\small{Form ID: }}
+\cfoot{\small{Akshara -- Student List-- Feb2013}}
 \rfoot{\small{\thepage of \pageref{LastPage}}}
 
 
-\setlength{\headheight}{2.0cm}
+\setlength{\headheight}{2.5cm}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
 
 
 \begin{document}
-\begin{longtable}{|l|p{2.7cm}|r@{}l|l|l|l|p{2.7cm}|p{2.7cm}|}
+\begin{longtable}{|l|l|p{2.7cm}|r@{}l|l|l|l|p{2.7cm}|p{2.7cm}|}
 \hline
-\textbf{StuID} & \textbf{Student Name} & \multicolumn{2}{c|}{\textbf{Class}} & \textbf{Sex} & \textbf{DoB} & \textbf{\makecell[b]{Mother\\ Tongue}} & \textbf{Father Name} & \textbf{Mother Name} \\
+\textbf{Status} & \textbf{StuID} & \textbf{Student Name} & \multicolumn{2}{c|}{\textbf{Class}} & \textbf{Sex} & \textbf{DoB} & \textbf{\makecell[b]{Mother\\ Tongue}} & \textbf{Father Name} & \textbf{Mother Name} \\
 \endhead \hline
 
 [% FOREACH stu = students -%]
-[% stu.sid %] & \footnotesize{[% stu.name %]} & [% stu.class %] & [% stu.sec%] & [% stu.sex %] & [% stu.dob %] & [% stu.lang%] & \footnotesize{[% stu.father %]} & \footnotesize{[% stu.mother %]} \\ \hline
+&[% stu.sid %] & \footnotesize{[% stu.name %]} & [% stu.class %] & [% stu.sec%] & [% stu.sex %] & [% stu.dob %] & [% stu.lang%] & \footnotesize{[% stu.father %]} & \footnotesize{[% stu.mother %]} \\ \hline
 [% END %]
 
 \end{longtable}

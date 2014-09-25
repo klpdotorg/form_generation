@@ -1,0 +1,328 @@
+﻿\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a3paper,top=1cm,left=0.5cm,right=0.5cm,bottom=3.3cm,landscape]{geometry}
+\usepackage{rotating,makecell}
+\usepackage{fontenc}
+\usepackage{draftwatermark}
+%% \usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{graphicx}
+\usepackage{lastpage}
+\usepackage{fp}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\def\heading{2013-14 Anganwadi assessment}
+%% Headers and footers
+\lhead{\includegraphics[scale=0.15]{/home/devi/form_generation/logo.jpg}}
+\chead{\Large{2 – 4 years age group \\ID: \rule{2in}{0.5pt} Name: \rule{2in}{0.5pt}  Type: \rule{2in}{0.5pt}}} 
+\rhead{\Large{Project: \rule{2in}{0.5pt} Circle: \rule{2in}{0.5pt}\\ Worker: \rule{2in}{0.5pt}}}
+\cfoot{\small{Research and Evaluation -- Akshara -- Anganwadi Assessment -- August-2014  © Akshara Foundation}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+
+%\nomakegapedcells
+%\renewcommand\theadset{\renewcommand\arraytretch{1}%
+%    \setlength\extrarowheight{0cm}}
+%\renewcommand\theadgape{0cm}
+%\renewcommand\cellgape{}
+%\setcellgapes[b]{-0.5cm}
+
+\setlength{\headheight}{2.3cm}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\qsetnum}{%
+\FPsub{\qnum}{\thepage}{1}
+\FPdiv{\qnum}{\thepage}{4}%
+\FPtrunc{\tqnum}{\qnum}{0}%
+\FPsub{\qnum}{\qnum}{\tqnum}%
+\FPmul{\qnum}{\qnum}{4}%
+\FPtrunc{\qnum}{\qnum}{0}%
+\FPifeq{\qnum}{0}
+   \FPset{\qnum}{4}%
+\fi
+\FPprint{\qnum}
+}%
+
+\newcommand{\kn}[1]{%Kannada text
+{\fontspec[Script=Kannada]{Kedage}%
+#1
+}}
+
+%\newcommand{\grading}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+%\newcommand{\instruct}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+\newcommand{\question}[1]{\begin{sideways}#1\end{sideways}}
+\renewcommand{\arraystretch}{1.4}
+
+\title{\heading}
+\begin{document}
+
+%\fontspec[Script=Kannada]{Kedage}
+\SetWatermarkText{Worker Copy}
+
+\begin{tabular}{|l|p{3cm}|p{3cm}|p{3cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+& & & & & & & &\multicolumn{6}{|c|}{\kn{ಸಾಮಾನ್ಯ ಅರಿವು}} & 
+\multicolumn{5}{|c|}{\kn{ಸ್ಥೂಲ ಚಲನೆಯ ಕೌಶಲಗಳು}} \\
+%\cline{20-25}
+& & & & & & &
+ & \multicolumn{6}{|c|}{} & \multicolumn{5}{|c|}{} \\ \hline
+
+& & & & & & &  &\question{\kn{ಮಗು ತನ್ನ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ}} 
+& \question{\kn{ತಾಯಿಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ}} 
+& \question{\kn{ತಂದೆಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ}} 
+& \question{\kn{\makecell[b]{ಕಾರ್ಯಕರ್ತೆಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ}}} 
+& \question{\kn{\makecell[b]{ತನ್ನ ಹಳ್ಳಿ ಅಥವಾ ಏರಿಯಾ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ}}} 
+& \question{\kn{\makecell[b]{ಅಣ್ಣ ಅಥವಾ ಅಕ್ಕನ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ}}} 
+& \question{\kn{ಬೀಳದೆ ನಡೆಯುವುದು}} 
+& \question{\kn{ಬೀಳದೆ ಓಡುವುದು}} 
+& \question{\kn{ಜಿಗಿಯುವುದು (3 ಬಾರಿ ಜಿಗಿಯುವುದು ಗುಂಪು ಚಟುವಟಿಕೆ) }} 
+& \question{\kn{ಚೆಂಡನ್ನು ಒದೆಯುವುದು (ಗುಂಪು ಚಟುವಟಿಕೆ)}}
+& \question{\kn{\makecell[b]{ನೇರವಾದ ಗೆರೆಯ ಮೇಲೆ ನಡೆಯುವುದು (ಗುಂಪು ಚಟುವಟಿಕೆ)}}} 
+\\ \hline
+
+& & & & & & & & \multicolumn{6}{|c|}{\kn{\makecell[b]{ಹೌದು=1,\\ ಇಲ್ಲ=0}}} 
+& \multicolumn{2}{|c|}{\kn{\makecell[b]{ಹೌದು =1, \\ ಇಲ್ಲ=0 \\ (ಕಾರ್ಯಕರ್ತೆ \\ ಗಮನಿಸುವುದು)}}} 
+& \multicolumn{1}{|c|}{\kn{\makecell[b]{ಜಿಗಿದರೆ=1, \\ ಜಿಗಿಯದಿದ್ದರೆ=0}}} 
+& \multicolumn{1}{|c|}{\kn{\makecell[b]{ಚೆಂಡನ್ನು  \\ ಒದ್ದರೆ=1, \\ ಒದೆಯದಿದ್ದರೆ=0}}} 
+& \multicolumn{1}{|c|}{\kn{\makecell[b]{ನಡೆದರೆ =1, \\ ನಡೆಯದಿದ್ದರೆ =0}}} \\ 
+\hline
+
+\makecell[b]{CID-\\ \kn{ಮಗುವಿನ ಗುರುತು}} & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} & \kn{ಲಿಂಗ} & \kn{ಹುಟ್ಟಿದ ದಿನಾಂಕ} & \kn{ಎತ್ತರ} & \kn{ತೂಕ}  & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+ &  &  &  &  &  & & & & & & & & & & & & & \\ \hline
+
+\end{tabular}
+
+\pagebreak
+
+\SetWatermarkText{Worker Copy}
+
+\begin{tabular}{|l|p{3cm}|p{3cm}|p{3cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|l|} 
+\hline
+
+& & & & & & & & \multicolumn{6}{|c|}{\kn{ಸೂಕ್ಷ್ಮ ಚಲನೆಯ ಕೌಶಲಗಳು}}
+& \multicolumn{2}{|c|}{\kn{ಕ್ರಿಯಾತ್ಮಕ ಬೆಳವಣಿಗೆ}} \\ 
+\cline{9-14}
+
+& & & & & & & & \multicolumn{1}{|c|}{\kn{\makecell[b]{ಸ್ವಸಹಾಯ \\ ಕೌಶಲಗಳು}} }
+& \multicolumn{5}{|c|}{\kn{\makecell[b]{ಕೈ ಚಳಕ ಬಳಕೆಯ \\ ಕೌಶಲಗಳು}}} 
+& \multicolumn{2}{|c|}{}
+ \\ 
+\hline
+
+& & & & & & & & \question{\kn{ಮಗು ಯಾರು ಸಹಾಯವಿಲ್ಲದೆ ತನ್ನ ಊಟ ತಾನೇ ತಿನ್ನುತ್ತಾಳೆ /ನೆ}} 
+& \question{\kn{ಬಾಟಲ್ ಗಳ ಮುಚ್ಚಳಗಳನ್ನು ಹಾಕುವುದು ಮತ್ತು ತೆಗೆಯುವುದು}} 
+& \question{\kn{ನೀರನ್ನು ಸುರಿಯುವುದು}} 
+& \question{\kn{3 ಬೆರಳಿನಿಂದ ಸಣ್ಣ ವಸ್ತುಗಳನ್ನು ಬಟ್ಟಲಲ್ಲಿ ಹಾಕುವುದು}} 
+& \question{\kn{ಗೋಪುರ ನಿರ್ಮಾಣ (ಐದು ಘನಾಕೃತಿಗಳು ಆಥವಾ ಖಾಲಿ ಬೆಂಕಿ ಪೊಟ್ಟಣ)}} 
+& \question{\kn{\makecell[b]{ಕ್ರಯಾನ್ಸ್ ನ್ನು 3 ಬೆರಳಿನಲ್ಲಿ ಹಿಡಿದು ಬಣ್ಣ ಹಾಕುವುದು \\(ಕ್ರಯಾನ್ಸ್ ಆಥವಾ ಸೀಮೆಸುಣ್ಣ)}}}
+& \question{\kn{ಚಿತ್ರಕಲೆ ಮತ್ತು ಕಲೆಯಲ್ಲಿ ಆಸಕ್ತಿಯಿಂದ ಭಾಗವಹಿಸುತ್ತಾರೆ}}
+& \question{\kn{ಸಂಗೀತ ನೃತ್ಯದಲ್ಲಿ ಆಸಕ್ತಿಯಿಂದ ಭಾಗವಹಿಸುತ್ತಾರೆ}} \\
+\hline
+
+& & & & & & & & \kn{\makecell[b]{ಹೌದು=1, \\ ಇಲ್ಲ=0}} 
+& \kn{\makecell[b]{ಹಾಕಿ  \\ತೆಗೆದರೆ =1, \\ ಇಲ್ಲದಿದ್ದರೆ=0}} 
+& \kn{\makecell[b]{ಚೆಲ್ಲದಿದ್ದರೆ=1, \\ ಚೆಲ್ಲಿದರೆ=0}} 
+& \kn{\makecell[b]{ತ್ರಿಪದಿಯಲ್ಲಿ \\ ಹಿಡಿದು \\ಹಾಕಿದರೆ=1 \\ ಇಲ್ಲದಿದ್ದರೆ =0}} 
+& \kn{\makecell[b]{ಹೌದು =1, \\ ಇಲ್ಲ=0}} 
+& \kn{\makecell[b]{ತ್ರಿಪದಿಯಲ್ಲಿ \\ ಹಿಡಿದರೆ=1, \\ ಹಿಡಿಯದಿದ್ದರೆ=0}}
+& \multicolumn{2}{|c|}{\kn{\makecell[b]{ಮಗು ಆಸಕ್ತಿಯಿಂದ \\ ಭಾಗವಹಿಸಿದರೆ=1, \\ಕಾರ್ಯಕರ್ತೆಯ \\ ಒತ್ತಾಯದಿಂದ \\ ಭಾಗವಹಿಸಿದರೆ =0}}} \\
+\hline
+
+\makecell[b]{CID-\\ \kn{ಮಗುವಿನ ಗುರುತು}} & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} & \kn{ಲಿಂಗ} & \kn{ಹುಟ್ಟಿದ ದಿನಾಂಕ} & \kn{ಎತ್ತರ} & \kn{ತೂಕ}& 12 & 13 & 14 & 15 & 16 & 17 & 18 & 19 \\ \hline
+& &  &  &  &  &  & & & & & & & & & \\ \hline
+& &  &  &  &  &  & & & & & & & & & \\ \hline
+& &  &  &  &  &  & & & & & & & & & \\ \hline 
+& &  &  &  &  &  & & & & & & & & & \\ \hline
+& &  &  &  &  &  & & & & & & & & & \\ \hline
+& &  &  &  &  &  & & & & & & & & & \\ \hline 
+& &  &  &  &  &  & & & & & & & & & \\ \hline
+& &  &  &  &  &  & & & & & & & & & \\ \hline
+& &  &  &  &  &  & & & & & & & & & \\ \hline 
+& &  &  &  &  &  & & & & & & & & & \\ \hline 
+
+\end{tabular}
+
+\pagebreak
+
+\SetWatermarkText{Worker Copy}
+
+\begin{tabular}{|l|p{3cm}|p{3cm}|p{3cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|} 
+\hline
+
+& & & & & & & & \multicolumn{7}{|c|}{\kn{ಗ್ರಹಣ ಶಕ್ತಿ ಬೆಳವಣಿಗೆ}}
+& \multicolumn{8}{|c|}{\kn{ಸಾಮಾಜಿಕ ಮತ್ತು ಭಾವನಾತ್ಮಕ ಬೆಳವಣಿಗೆ}} \\
+\hline
+
+& & & & & & & & \question{\kn{\makecell[b]{ಪ್ರಾಥಮಿಕ ಬಣ್ಣಗಳನ್ನು ಹೊಂದಿಸುವುದು \\ (ಚಟುವಟಿಕೆ ಮುಖಾಂತರ)}}}
+& \question{\kn{\makecell[b]{ಆಕಾರಗಳನ್ನು ಹೊಂದಿಸುವುದು \\ (ಚಟುವಟಿಕೆ ಮುಖಾಂತರ)}}}
+& \question{\kn{\makecell[b]{ಬಣ್ಣಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು \\ (ಚಟುವಟಿಕೆ ಮುಖಾಂತರ)}}}
+& \question{\kn{\makecell[b]{ಆಕಾರಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು \\ (ಚಟುವಟಿಕೆ ಮುಖಾಂತರ)}}}
+& \question{\kn{ಕನಿಷ್ಠ 3 ಸಂಖ್ಯೆಗಳನ್ನು ಅಥವಾ ವಸ್ತುಗಳನ್ನು ಪುನರುಚ್ಛರಿಸುವುದು (ಅದೇ ಕ್ರಮದಲ್ಲಿ)}} 
+& \question{\kn{ಹಗಲು ಮತ್ತು ರಾತ್ರಿ ವ್ಯತ್ಯಾಸ ಗುರುತಿಸುವುದು}}
+& \question{\kn{\makecell[b]{ಮಾದರಿಯನ್ನು ಕ್ರಮವಾಗಿ ಮುಂದುವರೆಸುವುದು \\ (ಚಟುವಟಿಕೆ ಮುಖಾಂತರ)}}}
+& \question{\kn{ಮಗು ಅಳದೆ ಕೇಂದ್ರಕ್ಕೆ ಬರುತ್ತಾನೆ / ಳೆ}} 
+& \question{\kn{ಮಗು ಕೇಂದ್ರದ ವೇಳಾಪಟ್ಟಿಯನ್ನು ಪಾಲಿಸುತ್ತಾನೆ/ ಳೆ}}
+& \question{\kn{ಮಗು ಭಾವನೆಗಳನ್ನು ವ್ಯಕ್ತ ಪಡಿಸುತ್ತಾನೆ / ಳೆ}}
+& \question{\kn{ಮಗು ಸ್ನೇಹಿತರೊಂದಿಗೆ ಆಡುತ್ತಾನೆ/ ಳೆ}}
+& \question{\kn{ಮಗು ಚಟುವಟಿಕೆಗಳಲ್ಲಿ ಭಾಗವಹಿಸುತ್ತಾನೆ/ ಳೆ}} 
+& \question{\kn{ಮಗು ಕೇಂದ್ರದ ನಿಯಮಗಳನ್ನು ಪಾಲಿಸುತ್ತಾನೆ/ ಳೆ}}
+& \question{\kn{ಮಗು ಕೇಂದ್ರಕ್ಕೆ ಬರುವಾಗ ಮತ್ತು ಹೋಗುವಾಗ ಕಾರ್ಯಕರ್ತೆಗೆ ಅಭಿನಂದಿಸುತ್ತಾನೆ/ ಳೆ}}
+& \question{\kn{ಮಗು ಕೇಂದ್ರಕ್ಕೆ  ಸ್ವಚ್ಚತೆಯಿಂದ ಬರುತ್ತಾನೆ/ ಳೆ}}
+\\
+\hline
+
+& & & & & & & & \multicolumn{2}{|c|}{\kn{\makecell[b]{ಹೊಂದಿಸಿದರೆ\\=1, \\ ಹೊಂದಿಸದಿದ್ದರೆ\\=0}}}
+& \multicolumn{2}{|c|}{\kn{\makecell[b]{ಬೇರ್ಪಡಿಸಿದರೆ\\=1, \\ ಬೇರ್ಪಡಿಸದಿದ್ದರೆ\\=0}}}
+& \multicolumn{2}{|c|}{\kn{\makecell[b]{ಹೇಳಿದರೆ\\=1, \\ ಹೇಳದಿದ್ದರೆ\\=0}}}
+& \kn{\makecell[b]{ಮಾದರಿಯನ್ನು \\ ಮುಂದುವರೆಸಿದರೆ\\=1, \\ ಮುಂದುವರೆಸದಿದ್ದರೆ\\=0}}
+& \multicolumn{8}{|c|}{\kn{\makecell[b]{ಹೌದು=1, ಇಲ್ಲ=0 \\ (ಕಾರ್ಯಕರ್ತೆ ಗಮನಿಸಿ ಅಂಕ ಕೊಡುವುದು)}}}
+\\
+\hline
+
+\makecell[b]{CID-\\ \kn{ಮಗುವಿನ ಗುರುತು}} & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} & \kn{ಲಿಂಗ} & \kn{ಹುಟ್ಟಿದ ದಿನಾಂಕ} & \kn{ಎತ್ತರ} & \kn{ತೂಕ} & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 & 29 & 30 & 31 & 32 & 33 & 34 \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline 
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & & & & & & & \\ \hline
+
+\end{tabular}
+
+\pagebreak
+
+\SetWatermarkText{Worker Copy}
+
+\begin{tabular}{|l|p{3cm}|p{3cm}|p{3cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|} 
+\hline
+
+& & & & & & & & \multicolumn{2}{|c|}{\kn{ಸಾಮಾಜಿಕ ಮತ್ತು ಭಾವನಾತ್ಮಕ ಬೆಳವಣಿಗೆ}} \\
+\hline
+
+& & & & & & & & \question{\kn{ಮಗು ಸಮಯಕ್ಕೆ ಸರಿಯಾಗಿ ಬರುತ್ತಾನೆ/ ಳೆ}}
+& \question{\kn{ಮಗು ಇತರೆ ಮಕ್ಕಳೊಂದಿಗೆ ಹೊಂದಿಕೊಳ್ಳುತ್ತಾನೆ/ ಳೆ}} \\
+\hline
+
+& & & & & & & & \kn{\makecell[b]{75\%=1, \\ 75\%ಗಿಂತ \\ ಕಡಿಮೆ=0}}
+& \kn{\makecell[b]{ಹೊಂದಿಕೊಂಡರೆ=1, \\ ಇಲ್ಲದಿದ್ದರೆ=0}} \\
+\hline
+
+\makecell[b]{CID-\\ \kn{ಮಗುವಿನ ಗುರುತು}} & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} & \kn{ಲಿಂಗ} & \kn{ಹುಟ್ಟಿದ ದಿನಾಂಕ} & \kn{ಎತ್ತರ} & \kn{ತೂಕ}& 35 & 36 \\ \hline
+& & & & & & & &  & \\ \hline
+& & & & & & & &  & \\ \hline
+& & & & & & & &  & \\ \hline 
+& & & & & & & &  & \\ \hline
+& & & & & & & &  & \\ \hline
+& & & & & & & &  & \\ \hline 
+& & & & & & & &  & \\ \hline
+& & & & & & & &  & \\ \hline
+& & & & & & & &  & \\ \hline 
+& & & & & & & &  & \\ \hline 
+
+\end{tabular}
+
+\pagebreak
+
+\SetWatermarkText{Facilitator Copy}
+
+\begin{tabular}{|l|p{3cm}|p{3cm}|p{3cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|} 
+\hline
+
+& & & & & & & & \multicolumn{7}{|c|}{\kn{ಭಾಷಾ ಬೆಳವಣಿಗೆ}} \\ 
+\hline
+
+& & & & & & & & \question{\kn{3 ಪದಗಳ ವಾಕ್ಯ ಮಾಡುವುದು}} 
+& \question{\kn{2 ಸೂಚನೆಗಳನ್ನು ಪಾಲಿಸುವುದು}}
+& \question{\kn{ಶಿಶು ಗೀತೆಯನ್ನು ಹೇಳುವುದು (2 ರಿಂದ4 ಸಾಲು)}}
+& \question{\kn{3 ಕ್ರಿಯೆಗಳನ್ನು ಗುರುತಿಸುವುದು }}
+& \question{\kn{ದೇಹದ ಅಂಗಗಳನ್ನು ಗುರುತಿಸುವುದು (ತಲೆ, ಕಣ್ಣು,ಕೈ,ಕಾಲು, ಹೊಟ್ಟೆ) }}
+& \question{\kn{ಮಗು ಮೇಲೆ ಕೆಳಗೆ ತೋರಿಸುವುದು}}
+& \question{\kn{ಮಗು ಒಳಗೆ-ಹೊರಗೆ ತೋರಿಸುವುದು}} \\
+\hline
+
+& & & & & & & & \kn{\makecell[b]{ಮಾಡಿದರೆ =1, \\ ಮಾಡದಿದ್ದರೆ =0}}
+& \kn{\makecell[b]{ಪಾಲಿಸಿದರೆ=1, \\ ಪಾಲಿಸದಿದ್ದರೆ=0}}
+& \kn{\makecell[b]{ಹೇಳಿದರೆ=1, \\ ಹೇಳದಿದ್ದರೆ=0}}
+& \kn{\makecell[b]{3=1, \\ 3ಕ್ಕಿಂತ ಕಡಿಮೆ =0}}
+& \kn{\makecell[b]{5=1, \\ 5ಕ್ಕಿಂತ ಕಡಿಮೆ =0}}
+& \multicolumn{2}{|c|}{\kn{\makecell[b]{ಸರಿಯಾಗಿ  \\ ತೋರಿಸಿದರೆ =1, \\ ತೋರಿಸದಿದ್ದರೆ=0}}} \\
+\hline
+
+\makecell[b]{CID-\\ \kn{ಮಗುವಿನ ಗುರುತು}} & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} & \kn{ಲಿಂಗ} & \kn{ಹುಟ್ಟಿದ ದಿನಾಂಕ} & \kn{ಎತ್ತರ} & \kn{ತೂಕ} & 37 & 38 & 39 & 40 & 41 & 42 & 43 \\ \hline
+& & & & & & & &  & & & & & & \\ \hline
+& & & & & & & &  & & & & & & \\ \hline
+& & & & & & & &  & & & & & & \\ \hline 
+& & & & & & & &  & & & & & & \\ \hline
+& & & & & & & &  & & & & & & \\ \hline
+& & & & & & & &  & & & & & & \\ \hline 
+& & & & & & & &  & & & & & & \\ \hline
+& & & & & & & &  & & & & & & \\ \hline
+& & & & & & & &  & & & & & & \\ \hline
+& & & & & & & &  & & & & & & \\ \hline  
+
+\end{tabular}
+
+\pagebreak
+
+%\SetWatermarkText{2}
+
+\begin{tabular}{|l|p{3cm}|p{3cm}|p{3cm}|p{1.5cm}|p{1.5cm}|l|l|l|l|l|l|l|l|l|l|l|} 
+\hline
+
+& & & & & & & & \multicolumn{5}{|c|}{\kn{ಭಾಷಾ ಬೆಳವಣಿಗೆ}}
+& \multicolumn{4}{|c|}{\kn{ಶಿಕ್ಷಣ ಪೂರ್ಣ ಗಣಿತ}}
+\\ 
+\hline
+
+& & & & & & & & \question{\kn{ಪ್ರಾಥಮಿಕ ಬಣ್ಣಗಳನ್ನು ಗುರುತಿಸುವುದು (ಕೆಂಪು, ನೀಲಿ, ಹಳದಿ)}}
+& \question{\kn{\makecell[b]{ಮೂಲ ಆಕಾರಗಳ ಹೆಸರು ಹೇಳುವುದು \\ (ವೃತ್ತ, ಚೌಕ, ತ್ರಿಭುಜ)}}}
+& \question{\kn{5 ತರಕಾರಿಗಳನ್ನು ಹೆಸರಿಸುವುದು}}
+& \question{\kn{5 ಹಣ್ಣುಗಳನ್ನು ಹೆಸರಿಸುವುದು}}
+& \question{\kn{ವಾರದ ಹೆಸರುಗಳನ್ನು ಕ್ರಮಬದ್ಧವಾಗಿ ಹೇಳುವುದು}}
+& \question{\kn{ಮಗು 1 ರಿಂದ 10 ರವರೆಗಿನ ಸಂಖ್ಯೆ ಹೇಳುವುದು}}
+& \question{\kn{ಮಗು ದೊಡ್ಡದು ಮತ್ತು ಚಿಕ್ಕದು ಗುರುತಿಸುವುದು}}
+& \question{\kn{ಮಗು ಹೆಚ್ಚು ಕಡಿಮೆ ಹೇಳುವುದು (ಕಲಿಕಾ ಸಾಮಗ್ರಿ ಬಳಸಿ)}}
+& \question{\kn{ಮಗು ಹತ್ತಿರ ದೂರ ಗುರುತಿಸುವುದು}} 
+\\
+\hline
+
+& & & & & & & & \multicolumn{2}{|c|}{\kn{\makecell[b]{3=1, \\ 3ಕ್ಕಿಂತ ಕಡಿಮೆ =0}}}
+& \multicolumn{2}{|c|}{\kn{\makecell[b]{3ಕ್ಕಿಂತ ಜಾಸ್ತಿ \\ ಹೇಳಿದರೆ=1, \\ 3ಕ್ಕಿಂತ ಕಡಿಮೆ \\ ಹೇಳಿದರೆ =0}}}
+& \kn{\makecell[b]{ಸರಿಯಾದ \\ ಕ್ರಮದಲ್ಲಿ \\ ಹೇಳಿದರೆ=1, \\ ಹೇಳದಿದ್ದರೆ =0}}
+& \kn{\makecell[b]{ಹೇಳಿದರೆ=1, \\ ಹೇಳದಿದ್ದರೆ=0}}
+& \kn{\makecell[b]{ಗುರುತಿಸಿದರೆ=1, \\ ಗುರುತಿಸದಿದ್ದರೆ=0}}
+& \kn{\makecell[b]{ಹೇಳಿದರೆ=1, \\ ಹೇಳದಿದ್ದರೆ=0}}
+& \kn{\makecell[b]{ಗುರುತಿಸಿದರೆ=1, \\ ಗುರುತಿಸದಿದ್ದರೆ=0}}
+\\
+\hline
+
+\makecell[b]{CID-\\ \kn{ಮಗುವಿನ ಗುರುತು}} & \kn{ಮಗುವಿನ ಹೆಸರು} & \kn{ತಂದೆಯ ಹೆಸರು} & \kn{ತಾಯಿಯ ಹೆಸರು} & \kn{ಲಿಂಗ} & \kn{ಹುಟ್ಟಿದ ದಿನಾಂಕ} & \kn{ಎತ್ತರ} & \kn{ತೂಕ}& 44 & 45 & 46 & 47 & 48 & 49 & 50 & 51 & 52 \\ \hline
+& & & & & & & &  & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & \\ \hline 
+& & & & & & & &  & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & \\ \hline 
+& & & & & & & &  & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & \\ \hline
+& & & & & & & &  & & & & & & & & \\ \hline 
+& & & & & & & &  & & & & & & & & \\ \hline 
+
+\end{tabular}
+
+\end{document}

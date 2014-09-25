@@ -136,7 +136,7 @@ sub format_children_pdf {
 
     my $tt = Template->new({
         # DEBUG => 'all',
-        INCLUDE_PATH => '',
+        INCLUDE_PATH => 'templates/2014/english/prefilled/',
         OUTPUT_PATH => 'assessments',
         LATEX_FORMAT => 'pdf'
     });

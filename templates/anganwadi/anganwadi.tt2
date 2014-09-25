@@ -1,0 +1,94 @@
+[% USE Latex(filter='pdf') %]
+[% FILTER pdf %]
+
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a3paper,left=0in,right=0in,landscape]{geometry}
+\usepackage{rotating,makecell}
+\usepackage{fontenc}
+%% \usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\def\heading{2009-10 Anganwadi assessment}
+%% Headers and footers
+\lhead{}
+\chead{\heading}
+\rhead{}
+\lfoot{\small{[Name]}}
+\cfoot{\small{[Signature]}}
+\rfoot{\small{[Date]}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\kn}[1]{%Kannada text
+{\fontspec[Script=Kannada]{Kedage}%
+#1
+}}
+
+%\newcommand{\grading}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+%\newcommand{\instruct}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+\newcommand{\colhead}[1]{\kn{#1}}
+\newcommand{\question}[1]{\colhead{\begin{sideways}#1\end{sideways}}}
+\newcommand{\instruct}[1]{\colhead{\makecell[l]{#1}}}
+
+\title{\heading}
+\begin{document}
+
+%\fontspec[Script=Kannada]{Kedage}
+\begin{tabular}{llllllllll}
+\rule{0cm}{0.75cm}PROJECT: & [% sch.b1 %] & CIRCLE: & [% sch.b %] & Anganwadi code: & [% sch.scode %] & Anganwadi name: [% sch.sname %] & Supervisor name: & [% sch.tname %] & Subsheet: 1 \\
+\end{tabular}
+
+\begin{longtable}{|l|p{4cm}|p{4cm}|p{4cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & &ಕೌಶಲ ಕ್ಷೇತ್ರಗಳು & \multicolumn{5}{|c|}{\colhead{ಸಾಮಾನ್ಯ ಅರಿವು}} & \multicolumn{6}{|c|}{\colhead{ಸೂಕ್ಷ್ಮ  ಚಲನೆಯ ಕೌಶಲಗಳು}} & \multicolumn{4}{|c|}{\colhead{ಸಾಮಾಜಿಕ ಮತ್ತು ಭಾವನಾತ್ಮಕ ಬೆಳವಣಿಗೆ}} \\ \hline
+ & & & &ಉಪ-ಕ್ಷೇತ್ರಗಳು & \multicolumn{5}{|c|}{\colhead{}} & \multicolumn{2}{|c|}{\colhead{}} & \multicolumn{4}{|c|}{\colhead{}} & \multicolumn{4}{|c|}{\colhead{}} \\ \hline
+ & & & &ಚಟುವಟಿಕೆಗಳ  ಪಟ್ಟ & \question{ಮಗು ತನ್ನ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?} & \question{ತನ್ನ ವಯಸ್ಸು ಹೇಳುತ್ತದೆಯೇ?} & \question{ತಾಯಿಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?} & \question{ತಂದೆಯ ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?} & \question{ಶಾಲೆಯ  ಹೆಸರು ಹೇಳುತ್ತದೆಯೇ?} & \question{\makecell[l]{ತೋರು ಬೆರಳಿನಿಂದ ಬಣ್ಣ ಹಾಕುವುದು ರು \\ (ಚಟುವಟಿಕೆ ಹಾಳಿ-14 ಉಪಯೊಗಿಸಿ)}} & \question{ಗೋಪುರ ನಿರ್ಮಾಣ (ಐದು ಘನಾಕ್ರತಿ)} & \question{ದಾರವನ್ನು ರಂಧ್ರಗಳಲ್ಲಿ ಪೋಣಿಸುವುದು} & \question{ಅಂಗಿಯ ಗುಂಡಿಗಳನ್ನು ಹಾಕುವುದು} & \question{ಅಂಗಿಯ ಗುಂಡಿಗಳನ್ನು ಬಿಚ್ಚುವುದು} & \question{ನೀರನ್ನು ಸುರಿಯುವುದು} & \question{ಮಗು 1 ರಿಂದ 20 ರವರೆಗಿನ ಸಂಖ್ಯೆಗಳನ್ನು ಎಣಿಸುವುದು} & \question{ಮಗು ವಾರದ ದಿನಗಳನ್ನು ಹೇಳುವುದು} & \question{ಮಗು ತಿಂಗಳುಗಳನ್ನು ಹೇಳುವುದು} & \question{ಮಗುವಿಗೆ ಪ್ರಸ್ತುತ ವರ್ಷ ಯಾವುದು ಎಂದು ಕೇಳುವುದು} \\ \hline
+ & & & & & \multicolumn{11}{|c|}{\colhead{ಹೌದು=1; ಇಲ್ಲ=0}} & \instruct{\makecell{20=1 \\ 20ಕ್ಕಿಂತ ಕಡಿಮೆ=0}} & \multicolumn{3}{|c|}{\colhead{ಹೌದು=1; ಇಲ್ಲ=0}} \\ \hline
+CID & ಮಗುವಿನ ಹೆಸರು & ತಂದೆಯ ಹೆಸರು & ತಾಯಿಯ ಹೆಸರು & ಅಂಕ & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10 & 11 & 12 & 13 & 14 & 15 \\ \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & & & & & & & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+\pagebreak
+
+\begin{tabular}{llllllllll}
+\rule{0cm}{0.75cm}PROJECT: & [% sch.b1 %] & CIRCLE: & [% sch.b %] & Anganwadi code: & [% sch.scode %] & Anganwadi name: [% sch.sname %] & Supervisor name: & [% sch.tname %]  & Subsheet: 2 \\
+\end{tabular}
+
+\begin{longtable}{|l|p{4cm}|p{4cm}|p{4cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & &ಕೌಶಲ ಕ್ಷೇತ್ರಗಳು & \multicolumn{13}{|c|}{\colhead{ಭಾಷಾ ಬೆಳವಣಿಗೆ}} \\ \hline
+ & & & &ಉಪ-ಕ್ಷೇತ್ರಗಳು & \multicolumn{13}{|c|}{\colhead{}} \\ \hline
+ & & & &ಚಟುವಟಿಕೆಗಳ  ಪಟ್ಟ & \question{ಮೂರು ಪದಗಳ ವಾಕ್ಯ ರಚನೆ} & \question{ಮೂರು ಸೂಚನೆಗಳನ್ನು ಅನುಸರಿಸುವುದು} & \question{ಶಿಶು ಗೀತೆ ಹೇಳುವುದು} & \question{ಪ್ರಾಥಮಿಕ ಬಣ್ಣಗಳನ್ನು ಗುರುತಿಸುವುದು} & \question{ಹಣ್ಣು ಮತ್ತು ತರಕಾರಿಗಳನ್ನು ಬೇರ್ಪಡಿಸುವುದು} & \question{ಮೊದಲ ಶಬ್ದದ ಉಚ್ಛಾರಣೆ} & \question{ಕ್ರಿಯಾಪದಗಳನ್ನು  ಗುರುತಿಸುವುದು} & \question{ದೇಹದ ಅಂಗಗಳನ್ನು ಗುರುತಿಸುವುದು} & \question{ಮಗು ಮೇಲೆ/ಕೆಳಗೆ ತೋರಿಸುವುದು} & \question{ಮಗು ಒಳಗೆ/ಹೊರಗೆ ತೋರಿಸುವುದು} & \question{ಮಗು ಮುಂದೆ/ಹಿಂದೆ ತೋರಿಸುವುದು} & \question{ಎಡ/ಬಲ ತೋರಿಸುವುದು} & \question{ಮಗು ಕಥೆ ಹೇಳುವುದು} \\ \hline
+ & & & & & \instruct{\makecell{3=1 \\ 3ಕ್ಕಿಂತ ಕಡಿಮೆ=0}} & \multicolumn{4}{|c|}{\colhead{ಹೌದು=1; ಇಲ್ಲ=0}} & \instruct{\makecell{5=1 \\ 5ಕ್ಕಿಂತ ಕಡಿಮೆ=0}} & \instruct{\makecell{3=1 \\ 3ಕ್ಕಿಂತ ಕಡಿಮೆ=0}} & \instruct{\makecell{5=1 \\ 5ಕ್ಕಿಂತ ಕಡಿಮೆ=0}} & \multicolumn{5}{|c|}{\colhead{ಹೌದು=1; ಇಲ್ಲ=0}} \\ \hline
+CID & ಮಗುವಿನ ಹೆಸರು & ತಂದೆಯ ಹೆಸರು & ತಾಯಿಯ ಹೆಸರು & ಅಂಕ & 16 & 17 & 18 & 19 & 20 & 21 & 22 & 23 & 24 & 25 & 26 & 27 & 28 \\ \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & & & & & & & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+\pagebreak
+
+\begin{tabular}{llllllllll}
+\rule{0cm}{0.75cm}PROJECT: & [% sch.b1 %] & CIRCLE: & [% sch.b %] & Anganwadi code: & [% sch.scode %] & Anganwadi name: [% sch.sname %] & Supervisor name: & [% sch.tname %]  & Subsheet: 3 \\
+\end{tabular}
+
+\begin{longtable}{|l|p{4cm}|p{4cm}|p{4cm}|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|l|}
+\hline
+ & & & &ಕೌಶಲ ಕ್ಷೇತ್ರಗಳು & \multicolumn{19}{|c|}{\colhead{ಶಿಕ್ಷಣ ಪೂರ್ವ}} \\ \hline
+ & & & &ಉಪ-ಕ್ಷೇತ್ರಗಳು & \multicolumn{7}{|c|}{\colhead{}} & \multicolumn{3}{|c|}{\colhead{}} & \multicolumn{9}{|c|}{\colhead{}} \\ \hline
+ & & & &ಚಟುವಟಿಕೆಗಳ  ಪಟ್ಟ & \question{\makecell[l]{ಮಗು ಸಂಖ್ಯೆಗಳನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 46 ಉಪಯೊಗಿಸಿ)}} & \question{ಮಗು ಪೆನ್ಸಿಲ್ ಚೆನ್ನಾಗಿ ಹಿಡಿಯುವುದು} & \question{ಮಗು ಪೆನ್ಸಿಲ್ ನಿಂದ ಒತ್ತಿ ಬರೆಯುವುದು} & \question{ಮಗುವಿನ ಪೆನ್ಸಿಲ್ನ ನಿಯಂತ್ರಣ ಸರಿಯಾಗಿದೆ} & \question{ಹೆಚ್ಚು/ಕಡಿಮೆ ಹೇಳುವುದು} & \question{ಮಗು 9 ವಸ್ತುಗಳನ್ನು ಎಣಿಸುವುದು} & \question{ಮಗು 1 ರಿಂದ 9 ರವರೆಗೆ ಗುರುತಿಸುವುದು} & \question{ಮಗು ಆಟಿಕೆಗಳನ್ನು ಸ್ನೇಹಿತರೊಂದಿಗೆ ಹಂಚಿಕೊಳ್ಲುವುದು} & \question{ಮಗು ತನ್ನ ಸರದಿಗಾಗಿ ಕಾಯುವುದು} & \question{ಮಗು ಭಾವನೆಗಳನ್ನು ವ್ಯಕ್ತಪಡಿಸುವುದು} & \question{ಮಗು ಸ್ನೇಹಿತರನ್ನು ಮಾಡಿಕೊಳ್ಲುವುದು} & \question{\makecell[l]{ಮಗು ಗುಂಪಿಗೆ ಸೇರದ ಆಕಾರವನ್ನು ಗುರುತಿಸುವುದು.\\(ಚಟುವಟಿಕೆ ಹಾಳೆ  38 ಉಪಯೊಗಿಸಿ)}} & \question{ಮಗು A ಯಿಂದ Z ವರೆಗೆ ಗುರುತಿಸುವುದು} & \question{ಮಗು ಅ ಯಿಂದ ಆ: ವರೆಗೂ ಗುರುತಿಸುವುದು} & \question{\makecell[l]{ಮಗು ಆಕಾರಗಳ ಮೇಲೆ ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ  41 ಉಪಯೊಗಿಸಿ)}} & \question{\makecell[l]{ಮಗು ಆಕಾರಗಳ ನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 42 ಉಪಯೊಗಿಸಿ)}} & \question{\makecell[l]{ಮಗು ಅಕ್ಷರಗಳನ್ನು ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 43 ಉಪಯೊಗಿಸಿ)}} & \question{\makecell[l]{ಮಗು ಅಕ್ಷರಗಳನ್ನು ನಕಲು ಮಾಡುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 44 ಉಪಯೊಗಿಸಿ)}} & \question{\makecell[l]{ಮಗು ಸಂಖ್ಯೆಗಳನ್ನು ತಿದ್ದುವುದು\\(ಚಟುವಟಿಕೆ ಹಾಳೆ 45 ಉಪಯೊಗಿಸಿ)}} \\ \hline
+ & & & & & \multicolumn{11}{|c|}{\colhead{ಹೌದು=1; ಇಲ್ಲ=0}} & \instruct{\makecell{2ರಿಂದ5=1 \\ 2ಕ್ಕಿಂತ ಕಡಿಮೆ=0}} & \instruct{\makecell{5=1 \\ 5ಕ್ಕಿಂತ ಕಡಿಮೆ=0}} & \instruct{\makecell{4=1 \\ 4ಕ್ಕಿಂತ ಕಡಿಮೆ=0}} & \multicolumn{5}{|c|}{\colhead{ಹೌದು=1; ಇಲ್ಲ=0}} \\ \hline
+CID & ಮಗುವಿನ ಹೆಸರು & ತಂದೆಯ ಹೆಸರು & ತಾಯಿಯ ಹೆಸರು & ಅಂಕ & 29 & 30 & 31 & 32 & 33 & 34 & 35 & 36 & 37 & 38 & 39 & 40 & 41 & 42 & 43 & 44 & 45 & 46 & 47 \\ \hline
+[% FOREACH stu = students -%]
+[% stu.sid %] & [% stu.name %] & [% stu.father %] & [% stu.mother %] & & & & & & & & & & & & & & & & & \\ \hline
+[% END %]
+\end{longtable}
+
+\end{document}
+[% END %]

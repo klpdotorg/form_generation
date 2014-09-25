@@ -1,0 +1,43 @@
+[% USE Latex(format='pdf') -%]
+
+[% FILTER latex %]
+\documentclass[10pt]{article}
+\usepackage[a4paper,left=0.2in]{geometry}
+\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{makecell}
+\usepackage{xcolor}
+\usepackage{lastpage}
+\usepackage{colortbl}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+
+%% Headers and footers
+\lhead{\makecell[l]{\textbf{Project:} [% school.b1 %] \\ \textbf{Circle:} [% school.b %]}}
+\chead{}
+\rhead{\textbf{Name:} \parbox{5cm}{[% school.name %]} \textbf{Type:} [% school.stype %] \textbf{ID:} [% school.scode %] \\ \textbf{Worker:} [% school.worker %]}
+\lfoot{Form ID: \texttt{[% formid %]\thepage}}
+\cfoot{\small{Akshara -- Anganwadi Children Info-- July 2011}}
+\rfoot{\small{\thepage of \pageref{LastPage}}}
+
+\setlength{\headheight}{15pt}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{longtable}{|l|l|p{3cm}|l|l|l|p{3cm}|p{3cm}|}
+\hline
+\textbf{Status} & \textbf{KLP ID} & \textbf{Name} & \textbf{Sex} & \textbf{DoB} & \textbf{Language} & \textbf{Father} & \textbf{Mother} \\
+\endhead \hline
+
+[% FOREACH stu = students -%]
+& [% stu.sid %] & [% stu.name %] & [% stu.sex %] & [% stu.dob %] & [% stu.lang %] & [% stu.father %] & [% stu.mother %] \\ \hline
+[% END %]
+
+\end{longtable}
+
+\end{document}
+[% END %]

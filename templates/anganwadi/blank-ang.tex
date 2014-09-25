@@ -1,0 +1,44 @@
+\documentclass[12pt]{article}
+%%\usepackage[normalmargins]{savetrees}
+\usepackage[a3paper,top=2cm,left=1cm,right=1cm,bottom=2cm,landscape]{geometry}
+\usepackage{rotating,makecell}
+\usepackage{fontenc}
+\usepackage{longtable}
+\usepackage{draftwatermark}
+%% \usepackage{xunicode}
+\usepackage{xltxtra}
+\usepackage{lastpage}
+\usepackage{fp}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+\def\heading{2009-10 Anganwadi assessment}
+%% Headers and footers
+\lhead{\textbf{Project:} \rule{5cm}{0.3pt} \\ \textbf{Cluster:} \rule{5cm}{0.3pt}}
+\chead{\textbf{Centre:} \rule{5cm}{0.3pt}}
+\rhead{\textbf{Teacher:} \rule{5cm}{0.3pt}}
+\lfoot{\small{Form ID: }}
+\cfoot{\small{\heading}}
+\rfoot{\small{page \rule{1cm}{0.3pt} of \rule{1cm}{0.3pt}}}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\newcommand{\kn}[1]{%Kannada text
+{\fontspec[Script=Kannada]{Kedage}%
+#1
+}}
+
+%\newcommand{\grading}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+%\newcommand{\instruct}[1]{\begin{sideways}\textbf{#1}\end{sideways}}
+\newcommand{\colhead}[1]{\kn{#1}}
+\newcommand{\question}[1]{\colhead{\begin{sideways}#1\end{sideways}}}
+\newcommand{\instruct}[1]{\colhead{\makecell[l]{#1}}}
+
+\title{\heading}
+\begin{document}
+
+%\fontspec[Script=Kannada]{Kedage}
+\input{tables}
+
+\end{document}
